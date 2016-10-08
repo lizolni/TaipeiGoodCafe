@@ -571,7 +571,7 @@
                                     <outlet property="storeImageCell" destination="zCs-PJ-NNX" id="MjB-dk-SOS"/>
                                     <outlet property="storeNameCell" destination="aXQ-38-NFe" id="Rp6-2n-0qS"/>
                                     <outlet property="storePhone" destination="YF7-0w-VPS" id="0QT-Mc-aUE"/>
-                                    <segue destination="dl9-XB-Mwf" kind="show" id="U5n-Q9-kLR"/>
+                                    <segue destination="dl9-XB-Mwf" kind="show" identifier="PassProductData" id="U5n-Q9-kLR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -586,10 +586,10 @@
             </objects>
             <point key="canvasLocation" x="3345" y="-415"/>
         </scene>
-        <!--View Controller-->
+        <!--Products View Controller-->
         <scene sceneID="CAo-ez-Rdt">
             <objects>
-                <viewController id="dl9-XB-Mwf" sceneMemberID="viewController">
+                <viewController id="dl9-XB-Mwf" customClass="ProductsViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3j-id-kfp"/>
                         <viewControllerLayoutGuide type="bottom" id="dew-t6-bQJ"/>
@@ -606,8 +606,22 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-FP-HBJ">
                                 <rect key="frame" x="0.0" y="280" width="600" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElM-p2-Kcy">
+                                        <rect key="frame" x="27" y="49" width="46" height="30"/>
+                                        <state key="normal" title="Favourite"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-Du-x5j">
+                                <rect key="frame" x="509" y="329" width="30" height="30"/>
+                                <state key="normal" title="Map"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-Es-mWw">
+                                <rect key="frame" x="277" y="329" width="46" height="30"/>
+                                <state key="normal" title="Facebook"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

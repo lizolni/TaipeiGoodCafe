@@ -177,9 +177,31 @@ class StoreTableViewController: UITableViewController {
                 }else {
                     print("getProductData fails")
                 }
-            })}
+            })
             }
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PassProductData" {
+            if let productList = segue.destinationViewController as? ProductsViewController {
+                guard let storeSender = sender as? StoreTableViewCell else {
+                    return
+                }
+                guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
+                    return
+                }
+                print(indexPaxh)
+                indexPaxh.row
+                
+                productList.getStoreName = stores[indexPaxh.row].storeName
+                
+                //productList.getStoreName?.text = stores[indexPaxh.row].storeName
+            }
+            
+        }
     }
 
 }
+
 
