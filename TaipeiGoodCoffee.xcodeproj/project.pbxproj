@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54AC686AE6E29895ECF07395 /* Pods_TaipeiGoodCoffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */; };
+		9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */; };
+		9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */; };
+		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
+		9F8580351DA53E8200211B6F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580341DA53E8200211B6F /* post.swift */; };
+		9F8580371DA572CC00211B6F /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580361DA572CC00211B6F /* store.swift */; };
+		9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A271D9CD88800AAA250 /* AppDelegate.swift */; };
+		9F979A2A1D9CD88800AAA250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A291D9CD88800AAA250 /* ViewController.swift */; };
+		9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A2B1D9CD88800AAA250 /* Main.storyboard */; };
+		9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */; };
+		9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A311D9CD88800AAA250 /* Assets.xcassets */; };
+		9F979A351D9CD88800AAA250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */; };
+		9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */; };
+		9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */; };
+		9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */; };
+		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
+		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
+		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
+		9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062971DA2691C0020E0E4 /* storeModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.debug.xcconfig"; sourceTree = "<group>"; };
+		657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaipeiGoodCoffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.release.xcconfig"; sourceTree = "<group>"; };
+		9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
+		9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogoutViewController.swift; sourceTree = "<group>"; };
+		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
+		9F8580341DA53E8200211B6F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
+		9F8580361DA572CC00211B6F /* store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
+		9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiGoodCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F979A271D9CD88800AAA250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F979A291D9CD88800AAA250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F979A2C1D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaipeiGoodCoffee.xcdatamodel; sourceTree = "<group>"; };
+		9F979A311D9CD88800AAA250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F979A341D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F979A361D9CD88800AAA250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorsCollectionViewController.swift; sourceTree = "<group>"; };
+		9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
+		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
+		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
+		9FE062971DA2691C0020E0E4 /* storeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = storeModel.swift; path = ../storeModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F979A211D9CD88800AAA250 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54AC686AE6E29895ECF07395 /* Pods_TaipeiGoodCoffee.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4381FDBC9D8D9BBD102816E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */,
+				8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		719745B2F4421D2BF326188C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F979A1B1D9CD88800AAA250 = {
+			isa = PBXGroup;
+			children = (
+				9F979A261D9CD88800AAA250 /* TaipeiGoodCoffee */,
+				9F979A251D9CD88800AAA250 /* Products */,
+				4381FDBC9D8D9BBD102816E4 /* Pods */,
+				719745B2F4421D2BF326188C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9F979A251D9CD88800AAA250 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F979A261D9CD88800AAA250 /* TaipeiGoodCoffee */ = {
+			isa = PBXGroup;
+			children = (
+				9FE062961DA2625E0020E0E4 /* Model */,
+				9F979A431D9D1CA700AAA250 /* Controller */,
+				9F979A3C1D9D101E00AAA250 /* View */,
+				9F979A271D9CD88800AAA250 /* AppDelegate.swift */,
+				9F979A291D9CD88800AAA250 /* ViewController.swift */,
+				9F979A2B1D9CD88800AAA250 /* Main.storyboard */,
+				9F979A311D9CD88800AAA250 /* Assets.xcassets */,
+				9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */,
+				9F979A361D9CD88800AAA250 /* Info.plist */,
+				9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */,
+				9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */,
+			);
+			path = TaipeiGoodCoffee;
+			sourceTree = "<group>";
+		};
+		9F979A3C1D9D101E00AAA250 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */,
+				9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9F979A431D9D1CA700AAA250 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */,
+				9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */,
+				9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */,
+				9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9FE062961DA2625E0020E0E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FE062971DA2691C0020E0E4 /* storeModel.swift */,
+				9F8580301DA48EF900211B6F /* products.swift */,
+				9FE062941DA2269A0020E0E4 /* getFirebase.swift */,
+				9F8580341DA53E8200211B6F /* post.swift */,
+				9F8580361DA572CC00211B6F /* store.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F979A231D9CD88800AAA250 /* TaipeiGoodCoffee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F979A391D9CD88800AAA250 /* Build configuration list for PBXNativeTarget "TaipeiGoodCoffee" */;
+			buildPhases = (
+				EF83E72FD8D0A0A4B7A29B5E /* [CP] Check Pods Manifest.lock */,
+				9F979A201D9CD88800AAA250 /* Sources */,
+				9F979A211D9CD88800AAA250 /* Frameworks */,
+				9F979A221D9CD88800AAA250 /* Resources */,
+				B7A17F6AB008C1142049010E /* [CP] Embed Pods Frameworks */,
+				44564BA4F65A0963D785107A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaipeiGoodCoffee;
+			productName = TaipeiGoodCoffee;
+			productReference = 9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F979A1C1D9CD88800AAA250 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Allen;
+				TargetAttributes = {
+					9F979A231D9CD88800AAA250 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9F979A1F1D9CD88800AAA250 /* Build configuration list for PBXProject "TaipeiGoodCoffee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F979A1B1D9CD88800AAA250;
+			productRefGroup = 9F979A251D9CD88800AAA250 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F979A231D9CD88800AAA250 /* TaipeiGoodCoffee */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F979A221D9CD88800AAA250 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F979A351D9CD88800AAA250 /* LaunchScreen.storyboard in Resources */,
+				9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */,
+				9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */,
+				9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44564BA4F65A0963D785107A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7A17F6AB008C1142049010E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF83E72FD8D0A0A4B7A29B5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F979A201D9CD88800AAA250 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */,
+				9F8580311DA48EF900211B6F /* products.swift in Sources */,
+				9F8580351DA53E8200211B6F /* post.swift in Sources */,
+				9F8580371DA572CC00211B6F /* store.swift in Sources */,
+				9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */,
+				9F979A2A1D9CD88800AAA250 /* ViewController.swift in Sources */,
+				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
+				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
+				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
+				9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */,
+				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,
+				9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */,
+				9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */,
+				9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9F979A2B1D9CD88800AAA250 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F979A2C1D9CD88800AAA250 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F979A341D9CD88800AAA250 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F979A371D9CD88800AAA250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F979A381D9CD88800AAA250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F979A3A1D9CD88800AAA250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+				);
+				INFOPLIST_FILE = TaipeiGoodCoffee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.allen.exercise.TaipeiGoodCoffee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F979A3B1D9CD88800AAA250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+					/Users/Allen/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = TaipeiGoodCoffee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.allen.exercise.TaipeiGoodCoffee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F979A1F1D9CD88800AAA250 /* Build configuration list for PBXProject "TaipeiGoodCoffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F979A371D9CD88800AAA250 /* Debug */,
+				9F979A381D9CD88800AAA250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F979A391D9CD88800AAA250 /* Build configuration list for PBXNativeTarget "TaipeiGoodCoffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F979A3A1D9CD88800AAA250 /* Debug */,
+				9F979A3B1D9CD88800AAA250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */,
+			);
+			currentVersion = 9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */;
+			path = TaipeiGoodCoffee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9F979A1C1D9CD88800AAA250 /* Project object */;
+}
