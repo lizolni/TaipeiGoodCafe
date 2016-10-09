@@ -11,20 +11,27 @@ import Firebase
 
 class StoreTableViewController: UITableViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let flavorSet = NSUserDefaults.standardUserDefaults()
     let conditionRef = FIRDatabase.database().reference()
     var stores = [Stores]()
     var products = [Products]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getStoredData()
         getProductData()
+        spinner.hidesWhenStopped = true
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
         
+        //UIRefreshControl - 下拉更新, 呼叫refresh func
+        self.refreshControl?.addTarget(self, action: #selector(StoreTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
-
         
     }
     
@@ -92,21 +99,29 @@ class StoreTableViewController: UITableViewController {
         
         if stores[indexPath.row].isFood == "Y" {
             cell.isFood.image = UIImage(named:"Food")
+        }else{
+            cell.isFood.hidden = true
         }
             
         if stores[indexPath.row].isDrink == "Y" {
             cell.isDrink.image = UIImage(named:"Drink")
-        }
-        if stores[indexPath.row].isPet == "Y" {
-            cell.isPet.image = UIImage(named:"Pet")
-        }
-        if stores[indexPath.row].isWifi == "Y" {
-            cell.isWifi.image = UIImage(named:"WIFI")
+        }else{
+            cell.isDrink.hidden = true
         }
         
-        //重新整理tableview
-        //
-        //self.tableView.reloadData()
+        if stores[indexPath.row].isPet == "Y" {
+            cell.isPet.image = UIImage(named:"Pet")
+        }else{
+            cell.isPet.hidden = true
+        }
+        
+        if stores[indexPath.row].isWifi == "Y" {
+            cell.isWifi.image = UIImage(named:"WIFI")
+        }else{
+            cell.isWifi.hidden = true
+        }
+        
+      
         return cell
     }
     
@@ -148,7 +163,9 @@ class StoreTableViewController: UITableViewController {
                                 print("add to array fails")
                             }
                         //重新整理tableview
+                        self.spinner.stopAnimating()
                         self.tableView.reloadData()
+                        
                     }else {
                         print("Please check your Network")
                     }
@@ -181,13 +198,24 @@ class StoreTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    //下拉更新
+    func refresh(sender:AnyObject)
+    {
+        self.getStoredData() //重取資料
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
 
+    //傳送資料至商品清單頁
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PassProductData" {
             if let productList = segue.destinationViewController as? ProductsViewController {
                 guard let storeSender = sender as? StoreTableViewCell else {
                     return
                 }
+                //判斷click哪個cell
                 guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
                     return
                 }
@@ -195,7 +223,9 @@ class StoreTableViewController: UITableViewController {
                 indexPaxh.row
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
-                
+                productList.facebookFanPage = stores[indexPaxh.row].fbPage
+                productList.getStoreImage = stores[indexPaxh.row].storeImage
+                productList.getProductArray = self.products
                 //productList.getStoreName?.text = stores[indexPaxh.row].storeName
             }
             

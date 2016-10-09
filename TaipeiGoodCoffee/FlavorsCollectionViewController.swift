@@ -12,6 +12,8 @@ import UIKit
 
 class FlavorsCollectionViewController: UICollectionViewController {
 
+    @IBOutlet weak var flavorSelectTitle: UILabel!
+
     @IBOutlet var collection: UICollectionView!
     
     var fullScreenSize:CGSize!
@@ -23,6 +25,10 @@ class FlavorsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        flavorSelectTitle.text = "選擇您喜好的咖啡味風味吧!"
+        
+        self.collectionView!.contentInset = UIEdgeInsetsMake(70,0,0,0)
         
         //取得 Screen size
         fullScreenSize = UIScreen.mainScreen().bounds.size
