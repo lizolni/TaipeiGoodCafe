@@ -8,11 +8,10 @@
 
 import UIKit
 
+
 //private let reuseIdentifier = "FlavorCell"
 
 class FlavorsCollectionViewController: UICollectionViewController {
-
-    @IBOutlet weak var flavorSelectTitle: UILabel!
 
     @IBOutlet var collection: UICollectionView!
     
@@ -26,9 +25,8 @@ class FlavorsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        flavorSelectTitle.text = "選擇您喜好的咖啡味風味吧!"
-        
-        self.collectionView!.contentInset = UIEdgeInsetsMake(70,0,0,0)
+        //設定collectionView的上下左右間距
+        self.collectionView!.contentInset = UIEdgeInsetsMake(20,0,0,0)
         
         //取得 Screen size
         fullScreenSize = UIScreen.mainScreen().bounds.size
@@ -43,6 +41,18 @@ class FlavorsCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
+        //header的高度
+        layout.headerReferenceSize = CGSize(
+            width: fullScreenSize.width, height: 40)
+        
+        //在UICollectionViewFlowLayout中註冊UIColectionReusbleView
+        collection.registerClass(
+            UICollectionReusableView.self,
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader,
+            withReuseIdentifier: "Header")
+
+        
+        
         //flavor Data
         let flavorArrayName = ["草莓","巧克力","檸檬","薄菏","麥茶","黑莓","木頭香","紅酒","茉莉花","玫瑰","蜂蜜","青蘋果"]
         
@@ -53,9 +63,10 @@ class FlavorsCollectionViewController: UICollectionViewController {
             info.name = flavorArrayName[i-1]
             let value:CGFloat = CGFloat(i)
             flavorData.append(info)
+            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -144,6 +155,35 @@ class FlavorsCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    //處理collection Header
+    override func collectionView(collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String,atIndexPath indexPath: NSIndexPath)-> UICollectionReusableView {
+            // 建立 UICollectionReusableView
+            var reusableView = UICollectionReusableView()
+            
+            // 顯示文字Label設定
+            let label = UILabel(frame: CGRect(x: 0, y: 10,width: fullScreenSize.width, height:20))
+            label.textAlignment = .Center
+            
+            // header
+            if kind == UICollectionElementKindSectionHeader {
+                // 依據前面註冊設置的識別名稱 "Header" 取得目前使用的 header
+                reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(
+                    UICollectionElementKindSectionHeader,
+                    withReuseIdentifier: "Header",
+                    forIndexPath: indexPath)
+                
+                // 設置 header 的內容
+                reusableView.backgroundColor = UIColor(red: 255/255, green: 187/255, blue: 176/255, alpha: 0.5)
+                label.text = "選擇您喜好的咖啡風味吧!";
+                label.textColor = UIColor.redColor()
+                
+            }else{
+        }
+        reusableView.addSubview(label)
+        return reusableView
+}
+
+        //處理點選味道
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //處理點選的方式
         let cell : UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
@@ -188,3 +228,4 @@ class FlavorInfo : NSObject {
     var name = ""
     var isSelect = false
 }
+
