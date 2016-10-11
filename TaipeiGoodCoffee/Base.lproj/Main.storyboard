@@ -648,6 +648,9 @@
                                             <constraint firstAttribute="height" constant="50" id="OJa-I3-MxD"/>
                                         </constraints>
                                         <state key="normal" title="Map" image="location"/>
+                                        <connections>
+                                            <segue destination="19J-QZ-k3E" kind="show" identifier="showStoreMap" id="5YJ-8P-gwn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -729,6 +732,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WP5-un-rZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4014" y="-415"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="MNj-Wl-yoB">
+            <objects>
+                <viewController id="19J-QZ-k3E" customClass="MapViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cFV-Zx-giO"/>
+                        <viewControllerLayoutGuide type="bottom" id="47H-kD-gxD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OwF-8Y-w1n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zl2-lW-Vat">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Fz6-4z-V27"/>
+                                    <constraint firstAttribute="height" constant="600" id="PLU-ys-WDH"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zl2-lW-Vat" firstAttribute="centerY" secondItem="OwF-8Y-w1n" secondAttribute="centerY" id="RKb-A8-x2q"/>
+                            <constraint firstItem="Zl2-lW-Vat" firstAttribute="centerX" secondItem="OwF-8Y-w1n" secondAttribute="centerX" id="Y8h-uV-FbJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="storeMap" destination="Zl2-lW-Vat" id="0HI-yi-XzU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Py-zl-0ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4743" y="-402"/>
         </scene>
         <!--我的最愛-->
         <scene sceneID="fe2-YB-FYR">

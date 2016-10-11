@@ -14,7 +14,6 @@
 		9F8580351DA53E8200211B6F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580341DA53E8200211B6F /* post.swift */; };
 		9F8580371DA572CC00211B6F /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580361DA572CC00211B6F /* store.swift */; };
 		9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A271D9CD88800AAA250 /* AppDelegate.swift */; };
-		9F979A2A1D9CD88800AAA250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A291D9CD88800AAA250 /* ViewController.swift */; };
 		9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A2B1D9CD88800AAA250 /* Main.storyboard */; };
 		9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */; };
 		9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A311D9CD88800AAA250 /* Assets.xcassets */; };
@@ -22,6 +21,8 @@
 		9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */; };
 		9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */; };
 		9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */; };
+		9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064321DABB07B003BA61C /* MapViewController.swift */; };
+		9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064341DAC7A3D003BA61C /* ViewController.swift */; };
 		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
 		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
 		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
@@ -40,7 +41,6 @@
 		9F8580361DA572CC00211B6F /* store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
 		9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiGoodCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F979A271D9CD88800AAA250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F979A291D9CD88800AAA250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F979A2C1D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaipeiGoodCoffee.xcdatamodel; sourceTree = "<group>"; };
 		9F979A311D9CD88800AAA250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorsCollectionViewController.swift; sourceTree = "<group>"; };
 		9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FA064321DABB07B003BA61C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
+		9FA064341DAC7A3D003BA61C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
@@ -106,11 +108,10 @@
 		9F979A261D9CD88800AAA250 /* TaipeiGoodCoffee */ = {
 			isa = PBXGroup;
 			children = (
-				9FE062961DA2625E0020E0E4 /* Model */,
+				9FE062961DA2625E0020E0E4 /* Data */,
 				9F979A431D9D1CA700AAA250 /* Controller */,
 				9F979A3C1D9D101E00AAA250 /* View */,
 				9F979A271D9CD88800AAA250 /* AppDelegate.swift */,
-				9F979A291D9CD88800AAA250 /* ViewController.swift */,
 				9F979A2B1D9CD88800AAA250 /* Main.storyboard */,
 				9F979A311D9CD88800AAA250 /* Assets.xcassets */,
 				9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */,
@@ -133,16 +134,18 @@
 		9F979A431D9D1CA700AAA250 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
 				9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */,
 				9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */,
 				9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */,
 				9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */,
+				9FA064341DAC7A3D003BA61C /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		9FE062961DA2625E0020E0E4 /* Model */ = {
+		9FE062961DA2625E0020E0E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				9FE062971DA2691C0020E0E4 /* storeModel.swift */,
@@ -151,7 +154,7 @@
 				9F8580341DA53E8200211B6F /* post.swift */,
 				9F8580361DA572CC00211B6F /* store.swift */,
 			);
-			name = Model;
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +285,6 @@
 				9F8580351DA53E8200211B6F /* post.swift in Sources */,
 				9F8580371DA572CC00211B6F /* store.swift in Sources */,
 				9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */,
-				9F979A2A1D9CD88800AAA250 /* ViewController.swift in Sources */,
 				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
@@ -291,6 +293,8 @@
 				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,
 				9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */,
 				9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */,
+				9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */,
+				9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */,
 				9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

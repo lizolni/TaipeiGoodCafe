@@ -24,6 +24,9 @@ class StoreTableViewController: UITableViewController {
         
         getStoredData()
         getProductData()
+        
+        
+        //spinner
         spinner.hidesWhenStopped = true
         spinner.center = view.center
         view.addSubview(spinner)
@@ -35,7 +38,7 @@ class StoreTableViewController: UITableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -55,33 +58,6 @@ class StoreTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("storeCell", forIndexPath: indexPath) as! StoreTableViewCell
-        
-//                print("address:\(stores[indexPath.row].storeAddress)")
-//                print("name:\(stores[indexPath.row].storeName)")
-//                print("phone:\(stores[indexPath.row].storePhone)")
-//                print("image:\(stores[indexPath.row].storeImage)")
-//                print("food:\(stores[indexPath.row].isFood)")
-//                print("pet:\(stores[indexPath.row].isPet)")
-//                print("wifi:\(stores[indexPath.row].isWifi)")
-//                print("drink:\(stores[indexPath.row].isDrink)")
-//                print("fbpage:\(stores[indexPath.row].fbPage)")
-//                print("imageid:\(stores[indexPath.row].storeImageID)")
-//                print("storeid:\(stores[indexPath.row].storeID)")
-//                print("servicetime \(stores[indexPath.row].serviceTime)")
-        
-        
-        
-    
-        print("productName:\(products[indexPath.row].productName)")
-        print("producer : \(products[indexPath.row].producer)")
-        print("manor : \(products[indexPath.row].manor)")
-        print("price : \(products[indexPath.row].price)")
-        print("flavor : \(products[indexPath.row].flavor)")
-        print("flavorID : \(products[indexPath.row].flavorID)")
-        print("productImageID : \(products[indexPath.row].productImageID)")
-        print("storeID : \(products[indexPath.row].storeID)")
-        print("weight : \(products[indexPath.row].weight)")
-        
         
         cell.storeNameCell.text = stores[indexPath.row].storeName
         cell.storeAdd.text = stores[indexPath.row].storeAddress
@@ -219,14 +195,19 @@ class StoreTableViewController: UITableViewController {
                 guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
                     return
                 }
-                print(indexPaxh)
                 indexPaxh.row
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
                 productList.getStoreImage = stores[indexPaxh.row].storeImage
-                productList.getProductArray = self.products
-                //productList.getStoreName?.text = stores[indexPaxh.row].storeName
+                //productList.getProductArray = self.products
+                productList.getStoreArray = self.stores
+                
+                //傳送地址給商品清單頁
+                productList.getLatitude = stores[indexPaxh.row].latitude
+                productList.getLongitude = stores[indexPaxh.row].longitude
+                
+                
             }
             
         }

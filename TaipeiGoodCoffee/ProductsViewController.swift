@@ -18,7 +18,10 @@ class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
     var getStoreName : String!
     var facebookFanPage :String!
     var getStoreImage : String!
+    var getLatitude : String!
+    var getLongitude : String!
     
+    var getStoreArray:[Stores]!
     var getProductArray:[Products]!
     
     override func viewDidLoad() {
@@ -33,14 +36,8 @@ class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
                 self.storeImage.image = UIImage(data:data)
                 }
             }
-        
-        for a in getProductArray {
-            print ("productname \(a.productName)")
         }
-    }
-    
-    
-    
+
     @IBAction func fbFanPage(sender: UIButton) {
         //判斷iPhone iOS版本
         //iOS 9
@@ -60,25 +57,23 @@ class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
-
-        
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+//    @IBAction func viewStoreMap(sender: UIButton) {
+//    
+//    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
+            if segue.identifier == "showStoreMap" {
+                if let  passLocation = segue.destinationViewController as? MapViewController {
+                    
+                    
+                    passLocation.getStoreLatitude = getLatitude
+                    passLocation.getStoreLongtitude = getLongitude
+                    
+                }
+            }
+        }
+    
 }

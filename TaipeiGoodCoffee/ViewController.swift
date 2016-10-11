@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TaipeiGoodCoffee
 //
-//  Created by Allen on 2016/9/29.
+//  Created by Allen on 2016/10/11.
 //  Copyright © 2016年 Allen. All rights reserved.
 //
 
@@ -12,14 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
