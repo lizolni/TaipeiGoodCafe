@@ -191,16 +191,23 @@ class StoreTableViewController: UITableViewController {
                 guard let storeSender = sender as? StoreTableViewCell else {
                     return
                 }
-                //判斷click哪個cell
+                
+                //判斷點擊哪個cell
                 guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
                     return
                 }
                 indexPaxh.row
                 
+                //var object = self.objects[indexPaxh!.row]
+                
+                
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
                 productList.getStoreImage = stores[indexPaxh.row].storeImage
-                //productList.getProductArray = self.products
+                productList.selectID = stores[indexPaxh.row].storeID
+                
+                
+                productList.getProductArray = self.products
                 productList.getStoreArray = self.stores
                 
                 //傳送地址給商品清單頁

@@ -23,6 +23,7 @@
 		9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */; };
 		9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064321DABB07B003BA61C /* MapViewController.swift */; };
 		9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064341DAC7A3D003BA61C /* ViewController.swift */; };
+		9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064401DACD627003BA61C /* ProductsViewCell.swift */; };
 		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
 		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
 		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
@@ -51,6 +52,7 @@
 		9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FA064321DABB07B003BA61C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		9FA064341DAC7A3D003BA61C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FA064401DACD627003BA61C /* ProductsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewCell.swift; sourceTree = "<group>"; };
 		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		9F979A3C1D9D101E00AAA250 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FA064401DACD627003BA61C /* ProductsViewCell.swift */,
 				9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */,
 				9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */,
 			);
@@ -288,6 +291,7 @@
 				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
+				9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */,
 				9FECAE7E1DA9292C00798622 /* ProductsViewController.swift in Sources */,
 				9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */,
 				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,

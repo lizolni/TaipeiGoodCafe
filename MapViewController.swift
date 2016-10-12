@@ -10,26 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
-//class MapViewController: UIViewController{
-//    
-//    
-//    
-//    @IBOutlet weak var storeMap: MKMapView!
-//    
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
-//       
-//}
-
-
 class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
     var getStoreLatitude : String!
     var getStoreLongtitude : String!
-    //var getStoreNameForMap :String!
+    var getStoreNameForMap :String!
     
     let locationManager:CLLocationManager = CLLocationManager()
     
@@ -44,7 +29,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         print("lat \(getStoreLatitude)")
 
         //Navigation Bar title name
-        //self.title = "\(店家名稱)"
+        self.title = "\(getStoreNameForMap)"
 
         //設定delegate
         locationManager.delegate = self
@@ -69,6 +54,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         //set destination Annotation
         let destinationAnnotation = MKPointAnnotation()
         destinationAnnotation.title = "Destination"
+        destinationAnnotation.subtitle = "\(getStoreNameForMap)"
 
         if let location = destinationPlacemark.location {
             destinationAnnotation.coordinate = location.coordinate
@@ -76,6 +62,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         }
         //set destination的圖釘
         self.storeMap.showAnnotations([destinationPlacemark], animated: true)
+        
 
         //在地圖上加上路徑
         let directionRequest = MKDirectionsRequest()
@@ -108,27 +95,27 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
 
         }
     }
-// viewDidLoad End
+ //viewDidLoad End
 
-//    //控制畫路徑圖的程式 -> overlay
-//
-//    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-//    
-//        let renderer = MKPolylineRenderer(overlay: overlay)
-//    
-//        renderer.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.5)
-//    
-//        renderer.lineWidth = 5.0
-//    
-//        return renderer
-//
-//    }
-//
-//    // 取得使用者位置
-//
-//    func locationManager(manager:CLLocationManager!, CLLocationManagerDelegate status:CLAuthorizationStatus){
-//        storeMap.showsUserLocation = (status == .AuthorizedAlways)
-//    }
+    //控制畫路徑圖的程式 -> overlay
+
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    
+        let renderer = MKPolylineRenderer(overlay: overlay)
+    
+        renderer.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+    
+        renderer.lineWidth = 5.0
+    
+        return renderer
+
+    }
+
+    // 取得使用者位置
+
+    func locationManager(manager:CLLocationManager!, CLLocationManagerDelegate status:CLAuthorizationStatus){
+        storeMap.showsUserLocation = (status == .AuthorizedAlways)
+    }
 
 }
 

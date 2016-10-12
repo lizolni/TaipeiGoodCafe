@@ -9,8 +9,14 @@
 import UIKit
 import SafariServices
 
-class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
 
+
+class ProductsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SFSafariViewControllerDelegate {
+
+
+    @IBOutlet weak var productsCollection: UICollectionView!
+
+    
    let systemVersion = UIDevice.currentDevice().systemVersion
     
     @IBOutlet weak var storeImage: UIImageView!
@@ -18,14 +24,26 @@ class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
     var getStoreName : String!
     var facebookFanPage :String!
     var getStoreImage : String!
-    var getLatitude : String!
-    var getLongitude : String!
+    var getLatitude : String?
+    var getLongitude : String?
+    var selectID : String?
     
     var getStoreArray:[Stores]!
     var getProductArray:[Products]!
+    var showProductArray = [Products]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print ("print selectID \(selectID)")
+        print("print productarray \(getProductArray)")
+        
+        for a in getProductArray {
+            if a.storeID == selectID{
+                showProductArray.append(a)
+            }
+        }
         
         //NivagationBar title Name
         self.title = getStoreName
@@ -59,21 +77,45 @@ class ProductsViewController: UIViewController,SFSafariViewControllerDelegate {
         }
     }
     
-    
-//    @IBAction func viewStoreMap(sender: UIButton) {
-//    
-//    }
-    
+    //傳送地圖座標+店名至地圖頁
     override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
             if segue.identifier == "showStoreMap" {
                 if let  passLocation = segue.destinationViewController as? MapViewController {
-                    
-                    
+                   
                     passLocation.getStoreLatitude = getLatitude
                     passLocation.getStoreLongtitude = getLongitude
+                    passLocation.getStoreNameForMap = getStoreName
                     
                 }
             }
         }
     
+     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return showProductArray.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductsCell", forIndexPath: indexPath) as! ProductsViewCell
+//        
+//        print ("print prodCellName \(self.getProductArray[indexPath.row].productName)")
+//        print ("print productID \(self.getProductArray[indexPath.row].storeID)")
+
+        
+        
+        
+        
+        cell.productsNameForCell.text = self.showProductArray[indexPath.row].productName
+        print("\(showProductArray[indexPath.row].productName)")
+
+        
+        return cell
+    }
 }
