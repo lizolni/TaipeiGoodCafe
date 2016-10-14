@@ -119,9 +119,9 @@ class StoreTableViewController: UITableViewController {
                 }
                 //依照productID取得Store資料
                 self.conditionRef.child("coffee/Stores").queryOrderedByChild("storeID").queryEqualToValue(id_1).observeEventType(.ChildAdded, withBlock:{ snapshot in
-                    //print ("stores KEY\(snapshot.key) . Store Value\(snapshot.value)")
+                    print ("stores KEY\(snapshot.key) . Store Value\(snapshot.value)")
                     
-                    if let getFlavor  = snapshot.value as? NSDictionary {
+                    if let getFlavor = snapshot.value as? NSDictionary {
                         let getStore = Stores(data: getFlavor)
                              //判斷重複store的開關
                              var haveSameStore = false
@@ -161,7 +161,7 @@ class StoreTableViewController: UITableViewController {
                     n += 1
                     
             conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(selectProductFlavorID)").observeEventType(.ChildAdded, withBlock:{ snapshot in
-                //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+                print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
                 
                 if let getProductFlavor = snapshot.value as? NSDictionary {
                     let getProduct = Products(data: getProductFlavor)
@@ -186,7 +186,7 @@ class StoreTableViewController: UITableViewController {
 
     //傳送資料至商品清單頁
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PassProductData" {
+        if segue.identifier == "showProductList" {
             if let productList = segue.destinationViewController as? ProductsViewController {
                 guard let storeSender = sender as? StoreTableViewCell else {
                     return
@@ -198,22 +198,19 @@ class StoreTableViewController: UITableViewController {
                 }
                 indexPaxh.row
                 
-                //var object = self.objects[indexPaxh!.row]
-                
-                
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
                 productList.getStoreImage = stores[indexPaxh.row].storeImage
-                productList.selectID = stores[indexPaxh.row].storeID
-                
-                
-                productList.getProductArray = self.products
-                productList.getStoreArray = self.stores
+                productList.selectStoreID = stores[indexPaxh.row].storeID
+                productList.selectProductID = products[indexPaxh.row].productID
                 
                 //傳送地址給商品清單頁
                 productList.getLatitude = stores[indexPaxh.row].latitude
                 productList.getLongitude = stores[indexPaxh.row].longitude
                 
+                //傳整包Store及product
+                productList.getProductArray = self.products
+                productList.getStoreArray = self.stores
                 
             }
             

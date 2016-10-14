@@ -24,6 +24,7 @@
 		9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064321DABB07B003BA61C /* MapViewController.swift */; };
 		9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064341DAC7A3D003BA61C /* ViewController.swift */; };
 		9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064401DACD627003BA61C /* ProductsViewCell.swift */; };
+		9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064421DAF5A32003BA61C /* ProductViewController.swift */; };
 		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
 		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
 		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
@@ -53,6 +54,7 @@
 		9FA064321DABB07B003BA61C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		9FA064341DAC7A3D003BA61C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FA064401DACD627003BA61C /* ProductsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewCell.swift; sourceTree = "<group>"; };
+		9FA064421DAF5A32003BA61C /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
+				9FA064421DAF5A32003BA61C /* ProductViewController.swift */,
 				9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */,
 				9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */,
 				9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */,
@@ -289,6 +292,7 @@
 				9F8580371DA572CC00211B6F /* store.swift in Sources */,
 				9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */,
 				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
+				9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
 				9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */,

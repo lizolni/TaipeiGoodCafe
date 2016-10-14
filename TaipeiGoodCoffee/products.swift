@@ -14,21 +14,22 @@ struct products {
     let producer:String
     let manor:String
     let price:Int
-    let flavor:String
+    let flavorDescription:String
     let flavorID:Int
     let productImageID:Int
     let productImage:String
     let storeID:Int
     let weight:String
     
-    init(productName:String,producer:String,manor:String,price:Int,flavorID:Int,flavor:String,productImageID:Int,productImage:String,storeID:Int,weight:String){
+    init(productName:String,producer:String,manor:String,price:Int,flavorID:Int,flavorDescription:String,productImageID:Int,productImage:String,storeID:Int,weight:String){
+        
         self.productName = productName
         self.producer = producer
         self.productImageID = productImageID
         self.productImage = productImage
         self.manor = manor
         self.price = price
-        self.flavor = flavor
+        self.flavorDescription = flavorDescription
         self.flavorID = flavorID
         self.storeID = storeID
         self.weight = weight
