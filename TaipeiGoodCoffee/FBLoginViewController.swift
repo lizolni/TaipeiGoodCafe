@@ -37,8 +37,6 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 let vc = storyboard.instantiateViewControllerWithIdentifier("FlavorsCollectionViewController") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
                 
-                
-                
             } else {
                 
                 self.loginButton.center = self.view.center
@@ -51,9 +49,6 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
             }
         }
-        
-        
-        
         
     }
     
@@ -77,10 +72,10 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             
         } else {
         //沒有發生錯誤及取消login facebook，即向firebase註冊新帳號
-        let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
-        FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
-           print("user login  firebase app")
-        }
+            let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+            FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
+                print("user login  firebase app")
+            }
             
         }
     
@@ -89,21 +84,8 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         print("user did logout")
     }
         
-        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

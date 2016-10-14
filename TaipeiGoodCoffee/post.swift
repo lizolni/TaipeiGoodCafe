@@ -14,8 +14,9 @@ class Products {
     var producer:String
     var manor:String
     var price:String
-    var flavor:String
+    var flavorDescription:String
     var flavorID:String
+    var productID : String
     var productImageID:String
     var productImage:String
     var storeID:String
@@ -26,12 +27,13 @@ class Products {
         producer = data["producer"] as? String ?? ""
         manor = data["manor"] as? String ?? ""
         price = data["price"] as? String ?? ""
-        flavor = data["flavor"] as? String ?? ""
+        flavorDescription = data["flavorDescription"] as? String ?? ""
         flavorID = data["flavorID"] as? String ?? ""
         productImageID = data["productImageID"] as? String ?? ""
-        productImage = data["productName"] as? String ?? ""
+        productImage = data["productImage"] as? String ?? ""
         storeID = data["storeID"] as? String ?? ""
         weight = data["weight"] as? String ?? ""
+        productID = data["productID"] as? String ?? ""
 
         
     }

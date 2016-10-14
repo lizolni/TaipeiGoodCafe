@@ -26,7 +26,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         //設定collectionView的上下左右間距
-        self.collectionView!.contentInset = UIEdgeInsetsMake(20,0,0,0)
+        self.collectionView!.contentInset = UIEdgeInsetsMake(20,0,10,0)
         
         //取得 Screen size
         fullScreenSize = UIScreen.mainScreen().bounds.size
@@ -34,7 +34,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
         // Register cell classes，建立collectionView自動產生，Mark掉就可以執行不會crash
         //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "reuseIdentifier")
         
-        //畫格子
+        //畫Layout
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(CGFloat(UIScreen.mainScreen().bounds.width/3 - 20.0),CGFloat(UIScreen.mainScreen().bounds.width/3 - 20.0))
         //set Grid Spacing
@@ -71,15 +71,6 @@ class FlavorsCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func changeFlavor () {
-        //已有flavorID，需重新改變值
-        //需要有取出原本的NSUserDefault的值
-        //顯示更新UI
-        //點選Submit時->清除所有的NSUserDefault -> 重新儲存NSUserDefault
-    }
-    
     
     @IBAction func saveFlavor(sender: AnyObject) {
         //submit處理
