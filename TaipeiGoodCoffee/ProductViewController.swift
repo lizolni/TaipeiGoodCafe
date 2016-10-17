@@ -34,16 +34,20 @@ class ProductViewController: UIViewController {
     var weight : String = ""
     var flavorDescription : String = ""
     var price : String = ""
+    var productId : String!
+    
+    var showProduct = [Products]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         productName.text = name
         productProducer.text = producer
         productManor.text = manor
         productWeight.text = weight
         productDescription.text = flavorDescription
-        productPrice.text = price
+        productPrice.text = ("$\(price)")
+        
         
         
         //圖片要先轉型成URL，再轉成NSData
@@ -59,6 +63,18 @@ class ProductViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addCart" {
+            if let addToCart = segue.destinationViewController as? CartViewController {
+                addToCart.getProdName = name
+                addToCart.getProdPrice = price
+                addToCart.getProdImage = image
+                addToCart.getProdID = productId
+                
+            }
+        }
     }
     
 }

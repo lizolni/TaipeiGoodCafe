@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		54AC686AE6E29895ECF07395 /* Pods_TaipeiGoodCoffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */; };
+		9F17CE8E1DB3A0980097407D /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE8D1DB3A0980097407D /* order.swift */; };
+		9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE911DB3C2DA0097407D /* CartViewController.swift */; };
+		9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE931DB3C46D0097407D /* CreditCard.swift */; };
 		9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */; };
 		9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */; };
 		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
@@ -36,6 +39,9 @@
 		164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.debug.xcconfig"; sourceTree = "<group>"; };
 		657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaipeiGoodCoffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.release.xcconfig"; sourceTree = "<group>"; };
+		9F17CE8D1DB3A0980097407D /* order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = order.swift; sourceTree = "<group>"; };
+		9F17CE911DB3C2DA0097407D /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		9F17CE931DB3C46D0097407D /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogoutViewController.swift; sourceTree = "<group>"; };
 		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		9F979A431D9D1CA700AAA250 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F17CE911DB3C2DA0097407D /* CartViewController.swift */,
 				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
 				9FA064421DAF5A32003BA61C /* ProductViewController.swift */,
@@ -154,6 +161,8 @@
 		9FE062961DA2625E0020E0E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9F17CE931DB3C46D0097407D /* CreditCard.swift */,
+				9F17CE8D1DB3A0980097407D /* order.swift */,
 				9FE062971DA2691C0020E0E4 /* storeModel.swift */,
 				9F8580301DA48EF900211B6F /* products.swift */,
 				9FE062941DA2269A0020E0E4 /* getFirebase.swift */,
@@ -295,15 +304,18 @@
 				9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
+				9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */,
 				9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */,
 				9FECAE7E1DA9292C00798622 /* ProductsViewController.swift in Sources */,
 				9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */,
+				9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */,
 				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,
 				9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */,
 				9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */,
 				9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */,
 				9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */,
 				9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */,
+				9F17CE8E1DB3A0980097407D /* order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

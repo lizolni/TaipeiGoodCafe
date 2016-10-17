@@ -159,13 +159,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 }
                 indexPath.row
                 
-                print("prepareForsegue \(self.showProductArray[indexPath.row].productName)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].producer)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].productImage)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].manor)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].weight)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].price)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].flavorDescription)")
                 
                 productVC.name = self.clickProductArray[indexPath.row].productName
                 productVC.producer = self.clickProductArray[indexPath.row].producer
@@ -173,7 +166,13 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 productVC.weight = self.clickProductArray[indexPath.row].weight
                 productVC.flavorDescription = self.clickProductArray[indexPath.row].flavorDescription
                 productVC.price = self.clickProductArray[indexPath.row].price
+                print("clickarray price : \(self.clickProductArray[indexPath.row].price)")
                 productVC.image = self.clickProductArray[indexPath.row].productImage
+                productVC.productId = self.clickProductArray[indexPath.row].productID
+                
+                //傳整包點選商品的Array到商品頁
+                productVC.showProduct = self.clickProductArray
+                
                 
             }
         }
