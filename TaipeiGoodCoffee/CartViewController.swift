@@ -10,32 +10,26 @@ import UIKit
 
 class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-    var order = [Order]()
-    var product = [Products]()
-    var cards = [CreditCard]()
-    var getProdID :String = ""
-    var getProdName :String = ""
-    var getProdPrice : String = ""
-    var getProdImage : String!
-    var cartProduct = [Products]()
-    var cardNumber : String = ""
-    var cardMonths : String = ""
-    var cardYears : String = ""
-    var cvc : String = ""
-    var shipping : Int = 60
-    var quantities:[String] = [String]()
-    
     //section - productName
     @IBOutlet weak var prodImage: UIImageView!
     @IBOutlet weak var prodName: UILabel!
     @IBOutlet weak var prodPrice: UILabel!
-    @IBOutlet weak var quantity: UIPickerView!
     
-    //payment - UIsegment
-    @IBAction func paymentSegment(sender: AnyObject) {
-        
-        
-    }
+    
+//payment - UIsegment
+//    @IBAction func paymentSegment(sender: UISegmentedControl) {
+//        switch sender.selectedSegmentIndex{
+//            case 0 :
+//                atmView.hidden = true
+//                creditCardView.hidden = false
+//            case 1 :
+//                atmView.hidden = false
+//                creditCardView.hidden = true
+//            default:
+//                atmView.hidden = true
+//                creditCardView.hidden = false
+//        }
+//    }
     
     //section - Credit Card
     @IBOutlet weak var creditCardNumber: UITextField!
@@ -63,19 +57,53 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         
     }
     
+    var getProdID :String = ""
+    var getProdName :String = ""
+    var getProdPrice : String = ""
+    var getProdImage : String = ""
+//    var cardNumber : String = ""
+//    var cardMonths : String = ""
+//    var cardYears : String = ""
+//    var cvc : String = ""
+//    var shipping : Int = 60
+    
+    
+    @IBOutlet weak var callPicker: UITextField!
+    var pickerViewData = ["1","2","3","4","5","6","7","8","9"]
+    var picker = UIPickerView()
+    var toolBar = UIToolbar()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.quantity.delegate = self
-        self.quantity.dataSource = self
+        //UIPickerView
+        picker.delegate = self
+        picker.dataSource = self
+        callPicker.inputView = picker
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        picker.showsSelectionIndicator = true
+//        
+////        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Bordered, target: self, action: "donePicker")
+////        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+////        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Bordered, target: self, action: "canclePicker")
+//        
+//        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.userInteractionEnabled = true
+        callPicker.inputAccessoryView = toolBar
+
         
         
         
-        var prod = product
-        var card = cards
+        
+        
+//        var prod = product
+//        var card = cards
         prodName.text = getProdName
         prodPrice.text = ("$\(getProdPrice)")
-        
         
         //圖片要先轉型成URL，再轉成NSData
         if let imageURL = NSURL(string: getProdImage){
@@ -84,16 +112,9 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
             }
         }
 
-        quantities = ["1","2","3"]
-        
-               
-        
         
         //TODO intitial fake data, user/product/store
         
-  
-
-        // Do any additional setup after loading the view.
     }
     
     //PickerView Delegate & DataSource
@@ -102,27 +123,19 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return quantities.count
+        return pickerViewData.count
+    }
+    
+    //toggle pickerView from text field
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        callPicker.text = pickerViewData[row]
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return quantities[row]
+        return pickerViewData[row]
     }
-    
-//    func pickerview pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if (row == 0){
-//    
-//    
-//        }else {
-//    
-//        }
-//    }
 
-    
-    
-    
-    
-//    public func loadView(user/product/store){
+ //    public func loadView(user/product/store){
 //        
 //    }
     

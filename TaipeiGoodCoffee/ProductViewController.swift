@@ -34,7 +34,7 @@ class ProductViewController: UIViewController {
     var weight : String = ""
     var flavorDescription : String = ""
     var price : String = ""
-    var productId : String!
+    var productId : String = ""
     
     var showProduct = [Products]()
     
@@ -65,13 +65,14 @@ class ProductViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //傳值至購物車頁
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addCart" {
             if let addToCart = segue.destinationViewController as? CartViewController {
-                addToCart.getProdName = name
-                addToCart.getProdPrice = price
-                addToCart.getProdImage = image
-                addToCart.getProdID = productId
+                addToCart.getProdName = self.name
+                addToCart.getProdPrice = self.price
+                addToCart.getProdImage = self.image
+                addToCart.getProdID = self.productId
                 
             }
         }

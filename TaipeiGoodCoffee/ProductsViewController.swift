@@ -54,11 +54,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 }
             }
         
-        for a in getProductArray{
-            print ("flavors \(String(a.flavorDescription))")
-            }
-        
-        
         //算被點擊的product
         for fetchProduct in getProductArray {
             if fetchProduct.storeID == selectStoreID{
@@ -67,8 +62,7 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 for clickProduct in showProductArray{
                     if clickProduct.productID == selectProductID {
                         clickProductArray.append(clickProduct)
-                        print("print clickProductArray \(clickProductArray)")
-                    }
+                   }
                 }
             }
         }
@@ -166,7 +160,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 productVC.weight = self.clickProductArray[indexPath.row].weight
                 productVC.flavorDescription = self.clickProductArray[indexPath.row].flavorDescription
                 productVC.price = self.clickProductArray[indexPath.row].price
-                print("clickarray price : \(self.clickProductArray[indexPath.row].price)")
                 productVC.image = self.clickProductArray[indexPath.row].productImage
                 productVC.productId = self.clickProductArray[indexPath.row].productID
                 

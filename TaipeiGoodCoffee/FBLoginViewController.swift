@@ -27,17 +27,27 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         loginButton.hidden = true
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if let user = user {
+            
+            if user != nil {
+
+                //儲存 firebase login user uid to NSUserDefault
+                NSUserDefaults.standardUserDefaults().setObject(FIRAuth.auth()!.currentUser!.uid, forKey: "uid")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                let storagePath = NSUserDefaults.standardUserDefaults().objectForKey("uid") as? String
+                
+                //轉跳頁面至Flavor select
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("FlavorsCollectionViewController") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
                 
 //                let mainStoryboard : UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
 //                let FlavorSelectController : UIViewController = mainStoryboard.instantiateViewcontrollerWithIdentifier("FlavorsCollectionViewController")
 //                self.presentViewController(FlavorsCollectionViewController, animated:true, completion:nil)
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("FlavorsCollectionViewController") as! UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
-                
             } else {
+                
                 
                 self.loginButton.center = self.view.center
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]

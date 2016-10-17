@@ -11,6 +11,8 @@
 		9F17CE8E1DB3A0980097407D /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE8D1DB3A0980097407D /* order.swift */; };
 		9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE911DB3C2DA0097407D /* CartViewController.swift */; };
 		9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE931DB3C46D0097407D /* CreditCard.swift */; };
+		9F17CEDE1DB4EEFC0097407D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */; };
+		9F17CEE01DB4EF710097407D /* ATMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CEDF1DB4EF710097407D /* ATMViewController.swift */; };
 		9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */; };
 		9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */; };
 		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
@@ -42,6 +44,8 @@
 		9F17CE8D1DB3A0980097407D /* order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = order.swift; sourceTree = "<group>"; };
 		9F17CE911DB3C2DA0097407D /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		9F17CE931DB3C46D0097407D /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		9F17CEDF1DB4EF710097407D /* ATMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMViewController.swift; sourceTree = "<group>"; };
 		9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogoutViewController.swift; sourceTree = "<group>"; };
 		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		9F979A431D9D1CA700AAA250 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F17CEDF1DB4EF710097407D /* ATMViewController.swift */,
+				9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */,
 				9F17CE911DB3C2DA0097407D /* CartViewController.swift */,
 				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
@@ -295,9 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F17CEE01DB4EF710097407D /* ATMViewController.swift in Sources */,
 				9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */,
 				9F8580311DA48EF900211B6F /* products.swift in Sources */,
 				9F8580351DA53E8200211B6F /* post.swift in Sources */,
+				9F17CEDE1DB4EEFC0097407D /* CreditCardViewController.swift in Sources */,
 				9F8580371DA572CC00211B6F /* store.swift in Sources */,
 				9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */,
 				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
