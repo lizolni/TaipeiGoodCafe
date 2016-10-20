@@ -10,6 +10,19 @@ import UIKit
 
 class OrderCompleteViewController: UIViewController {
 
+    @IBAction func gotoTableView(sender: AnyObject) {
+        
+        //轉跳頁面到訂單完成頁
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("StoreTableView")
+        
+        self.navigationItem.hidesBackButton = true
+        //vc.navigationItem.hidesBackButton = true
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

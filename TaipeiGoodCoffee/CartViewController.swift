@@ -133,6 +133,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         ]
         
         // 加上判斷全部都有值才能儲到firebase
+        // childByAutoId -> firebase 自動產生亂數ID (訂單ID)
         let saveOrdertoFirebase = conditionRef.child("Coffee").childByAppendingPath("Orders").childByAutoId()
         saveOrdertoFirebase.setValue(order)
         
@@ -140,6 +141,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("OrderCompleteViewController") as! UIViewController
         vc.navigationItem.hidesBackButton = true
+
         self.navigationController?.pushViewController(vc, animated: true)
         //self.presentViewController(vc, animated: true, completion: nil)
 
@@ -153,7 +155,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         
     }
     @IBOutlet weak var callPicker: UITextField!
-    var pickerViewData = ["1","2","3","4","5","6","7","8","9"]
+    let pickerViewData = ["1","2","3","4","5","6","7","8","9"]
     var picker = UIPickerView()
     var toolBar = UIToolbar()
     

@@ -484,14 +484,14 @@
         <!--找咖啡-->
         <scene sceneID="EKj-FQ-Pma">
             <objects>
-                <tableViewController id="dUc-Tv-CyG" customClass="StoreTableViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StoreTableView" id="dUc-Tv-CyG" customClass="StoreTableViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" id="BCw-5r-u96">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeCell" rowHeight="150" id="zfC-hy-u55" customClass="StoreTableViewCell" customModule="TaipeiGoodCoffee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfC-hy-u55" id="dKy-6Q-gqm">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
@@ -631,13 +631,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0N-ZI-pMA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0N-ZI-pMA">
                                 <rect key="frame" x="20" y="72" width="560" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="TUF-Mk-eeY"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-FP-HBJ">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-FP-HBJ">
                                 <rect key="frame" x="0.0" y="280" width="600" height="86"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-Es-mWw">
@@ -688,7 +688,7 @@
                                     <constraint firstAttribute="height" constant="86" id="xQJ-1t-oFz"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bET-2A-l9F">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bET-2A-l9F">
                                 <rect key="frame" x="0.0" y="366" width="600" height="185"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -790,7 +790,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-5Y-vzz">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-5Y-vzz">
                                 <rect key="frame" x="0.0" y="-49" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-cp-3OP">
@@ -1068,7 +1068,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="940"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyX-Vz-1NJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyX-Vz-1NJ">
                                 <rect key="frame" x="0.0" y="64" width="414" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82W-by-E8k">
@@ -1607,7 +1607,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="繼續購物"/>
                                 <connections>
-                                    <segue destination="dUc-Tv-CyG" kind="show" id="oF9-pK-BTA"/>
+                                    <action selector="gotoTableView:" destination="FK8-HU-D2n" eventType="touchUpInside" id="En3-nK-iJq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1881,7 +1881,4 @@
         <image name="heart" width="128" height="128"/>
         <image name="location" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="oF9-pK-BTA"/>
-    </inferredMetricsTieBreakers>
 </document>
