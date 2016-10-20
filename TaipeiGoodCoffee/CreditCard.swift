@@ -10,11 +10,11 @@ import Foundation
 
 class CreditCard {
     var creditCardNumber : String
-    var month : NSDate
-    var year : NSDate
+    var month : String
+    var year : String
     var cvc : String
     
-    init(creditCardNumber:String,month:NSDate,year:NSDate,cvc:String){
+    init(creditCardNumber:String,month:String,year:String,cvc:String){
         
         self.creditCardNumber = creditCardNumber
         self.month = month
@@ -23,12 +23,7 @@ class CreditCard {
         
     }
     
-//    
-//    func valitate()->Bool{
-//      //return creditCardNumber
-//        return true
-//    }
-    
+
     func matchesRegex(regex: String!, text: String!) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: regex, options: [.CaseInsensitive])

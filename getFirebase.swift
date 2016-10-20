@@ -32,6 +32,8 @@ class FirebaseData {
     //依照flavoID_1取得product資料
     
     func fetchStore() {
+        
+        self.stores.removeAll()
         //抓取NSUserDefault 1-3 的值
         var n = 1
         for select in 1...3 {
@@ -83,6 +85,8 @@ class FirebaseData {
     }
     
     func fetchProducts() {
+        
+        self.products.removeAll()
         //抓取NSUserDefault 1-3 的值
         var n = 1
         for select in 1...3 {

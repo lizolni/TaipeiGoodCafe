@@ -7,23 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ProductViewController: UIViewController {
     
+    //show product items
     @IBOutlet weak var productImage: UIImageView!
-    
     @IBOutlet weak var productFavorites: UIButton!
-    
     @IBOutlet weak var productName: UILabel!
-    
     @IBOutlet weak var productProducer: UILabel!
-    
     @IBOutlet weak var productManor: UILabel!
-    
     @IBOutlet weak var productWeight: UILabel!
-    
     @IBOutlet weak var productDescription: UILabel!
-    
     @IBOutlet weak var productPrice: UILabel!
     
     var image : String!
@@ -37,6 +32,8 @@ class ProductViewController: UIViewController {
     var productId : String = ""
     
     var showProduct = [Products]()
+    let conditionRef = FIRDatabase.database().reference()
+    var NSuser = NSUserDefaults.standardUserDefaults()
     
     
     override func viewDidLoad() {
@@ -48,21 +45,16 @@ class ProductViewController: UIViewController {
         productDescription.text = flavorDescription
         productPrice.text = ("$\(price)")
         
-        
-        
         //圖片要先轉型成URL，再轉成NSData
         if let imageURL = NSURL(string: image){
             if let data = NSData(contentsOfURL: imageURL) {
                 self.productImage.image = UIImage(data:data)
             }
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //傳值至購物車頁
@@ -77,5 +69,25 @@ class ProductViewController: UIViewController {
             }
         }
     }
+    
+    //點擊我的最愛by商品
+    @IBAction func productFavorites(sender: AnyObject) {
+        var prodFlavorites : NSDictionary = [:]
+        var prodID : AnyObject = ""
+        let uid = self.NSuser.objectForKey("uid")
+        
+        if uid == nil {
+            return fatalError()
+        }
+        let user = uid
+        prodID = self.productId
+        
+        prodFlavorites = [user as! String : true]
+        let addProdFlavoritesTOFirebase = conditionRef.child("Coffee").childByAppendingPath("productFavorites").childByAppendingPath(productId)
+        addProdFlavoritesTOFirebase.setValue(prodFlavorites)
+        
+        
+    }
+
     
 }

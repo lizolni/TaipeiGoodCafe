@@ -21,6 +21,13 @@ class FlavorsCollectionViewController: UICollectionViewController {
     var flavorSet = NSUserDefaults.standardUserDefaults()
     var flavorName = [String]()
     var flavorId = [Int]()
+    var reSetButtonVisible:Bool?
+    
+    //Navigation right button
+    @IBAction func reSaveFlavors(sender: AnyObject) {
+        self.saveFlavor(sender)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +71,21 @@ class FlavorsCollectionViewController: UICollectionViewController {
             let value:CGFloat = CGFloat(i)
             flavorData.append(info)
             
+        //get from Setting pass value.
+        // visible/hide reSaveFlavors (@IBaction)
+            let saveButton = reSetButtonVisible
+            
+            print("reSetButtonVisible status : \(saveButton)")
+            
+                if  saveButton == false {
+                    self.navigationItem.rightBarButtonItem?.enabled = false
+                    self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clearColor()
+                } else {
+                    self.navigationItem.rightBarButtonItem?.enabled = true
+                    self.navigationItem.rightBarButtonItem?.tintColor = UIColor.blackColor()
+            }
         }
-    }
+}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -110,13 +130,13 @@ class FlavorsCollectionViewController: UICollectionViewController {
             
             flavorSet.synchronize()
             
-//            let select1 = self.flavorSet.objectForKey("FlavorSelect_1")
-//            let select2 = self.flavorSet.objectForKey("FlavorSelect_2")
-//            let select3 = self.flavorSet.objectForKey("FlavorSelect_3")
-//            
-//            print(select1)
-//            print(select2)
-//            print(select3)
+            let select1 = self.flavorSet.objectForKey("FlavorSelect_1")
+            let select2 = self.flavorSet.objectForKey("FlavorSelect_2")
+            let select3 = self.flavorSet.objectForKey("FlavorSelect_3")
+            
+            print("saveFlavorSelect1 \(select1)")
+            print("saveFlavorSelect2 \(select2)")
+            print("saveFlavorSelect3 \(select3)")
             
     }
         //儲存完NSUserDefault後導頁至store頁
@@ -124,7 +144,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
         let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
 }
-
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

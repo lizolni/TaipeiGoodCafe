@@ -8,28 +8,46 @@
 
 import UIKit
 
-class CreditCardViewController: UIViewController {
+class CreditCardViewController: UIViewController ,UITextFieldDelegate {
+
+    
+    @IBOutlet weak var cvc: UITextField!
+    
+    @IBOutlet weak var year: UITextField!
+    
+    @IBOutlet weak var month: UITextField!
+    
+    @IBOutlet weak var creditCardNumber: UITextField!
+    
+    var getCardNumber = ""
+    var getMonth = ""
+    var getYear = ""
+    var getcvc = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+//        creditCardNumber.delegate = self
+//        month.delegate = self
+//        year.delegate = self
+//        cvc.delegate = self
+        
+//        getcvc = cvc.text!
+//        getYear = year.text!
+//        getMonth = month.text!
+//        getCardNumber = creditCardNumber.text!
+        
+        let creditCard = CreditCard(creditCardNumber: getCardNumber,month:getMonth ,year:getYear,cvc:getcvc)
+        creditCard.checkCardNumber(creditCard.creditCardNumber)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        creditCardNumber.resignFirstResponder()
+        month.resignFirstResponder()
+        year.resignFirstResponder()
+        cvc.resignFirstResponder()
+        return true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -18,6 +18,9 @@
 		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
 		9F8580351DA53E8200211B6F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580341DA53E8200211B6F /* post.swift */; };
 		9F8580371DA572CC00211B6F /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580361DA572CC00211B6F /* store.swift */; };
+		9F8844AD1DB7198600A4AA1F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */; };
+		9F8844AF1DB742AC00A4AA1F /* CreditCardValidated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */; };
+		9F8844C11DB8A6B300A4AA1F /* OrderCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */; };
 		9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A271D9CD88800AAA250 /* AppDelegate.swift */; };
 		9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A2B1D9CD88800AAA250 /* Main.storyboard */; };
 		9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */; };
@@ -51,6 +54,9 @@
 		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		9F8580341DA53E8200211B6F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		9F8580361DA572CC00211B6F /* store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
+		9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidated.swift; sourceTree = "<group>"; };
+		9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCompleteViewController.swift; sourceTree = "<group>"; };
 		9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiGoodCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F979A271D9CD88800AAA250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F979A2C1D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 				9F17CEDF1DB4EF710097407D /* ATMViewController.swift */,
 				9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */,
 				9F17CE911DB3C2DA0097407D /* CartViewController.swift */,
+				9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */,
+				9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */,
 				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
 				9FA064421DAF5A32003BA61C /* ProductViewController.swift */,
@@ -169,6 +177,7 @@
 			children = (
 				9F17CE931DB3C46D0097407D /* CreditCard.swift */,
 				9F17CE8D1DB3A0980097407D /* order.swift */,
+				9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */,
 				9FE062971DA2691C0020E0E4 /* storeModel.swift */,
 				9F8580301DA48EF900211B6F /* products.swift */,
 				9FE062941DA2269A0020E0E4 /* getFirebase.swift */,
@@ -312,9 +321,12 @@
 				9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
+				9F8844AD1DB7198600A4AA1F /* SettingViewController.swift in Sources */,
 				9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */,
 				9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */,
+				9F8844AF1DB742AC00A4AA1F /* CreditCardValidated.swift in Sources */,
 				9FECAE7E1DA9292C00798622 /* ProductsViewController.swift in Sources */,
+				9F8844C11DB8A6B300A4AA1F /* OrderCompleteViewController.swift in Sources */,
 				9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */,
 				9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */,
 				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,

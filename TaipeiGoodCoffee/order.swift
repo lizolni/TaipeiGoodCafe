@@ -13,8 +13,6 @@ class Order {
     var orderID : String
     let productID : String
     let productName : String
-    let producer : String
-    let manor : String
     var price : String
     var quantity : String
     var buyer : String
@@ -27,14 +25,11 @@ class Order {
     var productPrice : Int
     var checkoutPrice : Int
     
-    init(orderID:String,productID:String,productName:String,producer:String,manor:String,price:String,quantity:String,buyer:String,buyerPhone:String,buyerAddress:String,recvicer:String,receiverPhone:String,receiverAddress:String,shipping:Int,productPrice:Int,checkoutPrice:Int){
-        
+    init(orderID:String,productID:String,productName:String,price:String,quantity:String,buyer:String,buyerPhone:String,buyerAddress:String,recvicer:String,receiverPhone:String,receiverAddress:String,shipping:Int,productPrice:Int,checkoutPrice:Int){
         
         self.orderID = orderID
         self.productID = productID
         self.productName = productName
-        self.producer = producer
-        self.manor = manor
         self.price = price
         self.quantity = quantity
         self.buyer = buyer

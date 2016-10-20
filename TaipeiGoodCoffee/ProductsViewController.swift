@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import FirebaseDatabase
 
 
 class ProductsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,SFSafariViewControllerDelegate {
@@ -20,6 +21,7 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var storeImage: UIImageView!
     
+    
     var getStoreName : String!
     var facebookFanPage :String?
     var getStoreImage : String!
@@ -28,12 +30,15 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
     var selectStoreID : String?
     var selectProductID : String?
     var pos:Int!
-    
+    let conditionRef = FIRDatabase.database().reference()
+    let NSuser = NSUserDefaults.standardUserDefaults()
+
     var getStoreArray = [Stores]()
     var getProductArray = [Products]()
     var showProductArray = [Products]()
     var clickProductArray = [Products]()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,7 +95,28 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
-   
+    
+    //點擊我的最愛by店家
+    @IBAction func store_Favorites(sender: AnyObject) {
+        var storeFlavorites : NSDictionary = [:]
+        var storeID : AnyObject = ""
+        let uid = self.NSuser.objectForKey("uid")
+        
+        if uid == nil {
+            return fatalError()
+        }
+        let user = uid
+        storeID = self.selectStoreID!
+        
+        storeFlavorites = [user as! String : true]
+        let storeFavorites = conditionRef.child("Coffee").childByAppendingPath("storeFavorites").childByAppendingPath(storeID as! String)
+        storeFavorites.setValue(storeFlavorites)
+        //query firebase
+//        conditionRef.child("Coffee/favorites").child(storeID as! String).queryOrderedByChild(user as! String).queryEqualToValue(true).observeEventType(.value, withBlock:{ snapshot in
+//            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+//        })
+    }
+
 
      func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -153,7 +179,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 }
                 indexPath.row
                 
-                
                 productVC.name = self.clickProductArray[indexPath.row].productName
                 productVC.producer = self.clickProductArray[indexPath.row].producer
                 productVC.manor = self.clickProductArray[indexPath.row].manor
@@ -165,7 +190,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 
                 //傳整包點選商品的Array到商品頁
                 productVC.showProduct = self.clickProductArray
-                
                 
             }
         }
