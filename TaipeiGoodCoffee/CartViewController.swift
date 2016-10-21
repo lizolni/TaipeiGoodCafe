@@ -255,7 +255,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         }
         
         if textField.tag == 3{
-            let maxLength = 4
+            let maxLength = 2
             let currentString: NSString = textField.text!
             let newString: NSString =
                 currentString.stringByReplacingCharactersInRange(range, withString: string)
