@@ -19,8 +19,9 @@ class OrderCompleteViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         //vc.navigationItem.hidesBackButton = true
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.pushViewController(vc, animated: true)
 
+        self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
     override func viewDidLoad() {
