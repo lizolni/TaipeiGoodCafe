@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class OrderCompleteViewController: UIViewController {
-
+    
+    let conditionRef = FIRDatabase.database().reference()
+    let user = NSUserDefaults.standardUserDefaults()
+    
+    
     @IBAction func gotoTableView(sender: AnyObject) {
         
         //轉跳頁面到訂單完成頁
@@ -19,33 +24,35 @@ class OrderCompleteViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         //vc.navigationItem.hidesBackButton = true
         
-        //self.navigationController?.pushViewController(vc, animated: true)
-
         self.navigationController?.popToRootViewControllerAnimated(true)
+        //self.navigationController?.pushViewController(vc, animated: true)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
-
+        
+        getOrderResult()
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Get from OrderResult from firebase
+    func getOrderResult(){
+        
+        //Get User ID
+        let uid = user.objectForKey("uid")
+        
+        //fetch firebase Coffee/Order/uid
+        conditionRef.child("Coffee/Orders").queryOrderedByChild("userID").queryEqualToValue("\(uid)").observeEventType(.Value, withBlock:{ snapshot in
+            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+        })
     }
-    */
-
+    
 }

@@ -15,6 +15,7 @@
 		9F17CEE01DB4EF710097407D /* ATMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CEDF1DB4EF710097407D /* ATMViewController.swift */; };
 		9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */; };
 		9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */; };
+		9F46AD781DBA1BF2000E417B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F46AD771DBA1BF2000E417B /* Info.plist */; };
 		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
 		9F8580351DA53E8200211B6F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580341DA53E8200211B6F /* post.swift */; };
 		9F8580371DA572CC00211B6F /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580361DA572CC00211B6F /* store.swift */; };
@@ -52,6 +53,7 @@
 		9F17CEDF1DB4EF710097407D /* ATMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMViewController.swift; sourceTree = "<group>"; };
 		9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogoutViewController.swift; sourceTree = "<group>"; };
+		9F46AD771DBA1BF2000E417B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		9F8580341DA53E8200211B6F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		9F8580361DA572CC00211B6F /* store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
@@ -63,7 +65,6 @@
 		9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaipeiGoodCoffee.xcdatamodel; sourceTree = "<group>"; };
 		9F979A311D9CD88800AAA250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F979A341D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F979A361D9CD88800AAA250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorsCollectionViewController.swift; sourceTree = "<group>"; };
 		9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,7 +139,7 @@
 				9FB36E581DB8ED6300E2BAC1 /* Main.storyboard */,
 				9F979A311D9CD88800AAA250 /* Assets.xcassets */,
 				9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */,
-				9F979A361D9CD88800AAA250 /* Info.plist */,
+				9F46AD771DBA1BF2000E417B /* Info.plist */,
 				9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */,
 				9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */,
 			);
@@ -256,6 +257,7 @@
 				9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */,
 				9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */,
 				9FB36E5A1DB8ED6300E2BAC1 /* Main.storyboard in Resources */,
+				9F46AD781DBA1BF2000E417B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
