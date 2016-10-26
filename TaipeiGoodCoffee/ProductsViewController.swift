@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import FirebaseDatabase
 
 
 class ProductsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,SFSafariViewControllerDelegate {
@@ -20,6 +21,7 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var storeImage: UIImageView!
     
+    
     var getStoreName : String!
     var facebookFanPage :String?
     var getStoreImage : String!
@@ -28,12 +30,15 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
     var selectStoreID : String?
     var selectProductID : String?
     var pos:Int!
-    
+    let conditionRef = FIRDatabase.database().reference()
+    let NSuser = NSUserDefaults.standardUserDefaults()
+
     var getStoreArray = [Stores]()
     var getProductArray = [Products]()
     var showProductArray = [Products]()
     var clickProductArray = [Products]()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,24 +58,19 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 self.storeImage.image = UIImage(data:data)
                 }
             }
-        
-        for a in getProductArray{
-            print ("flavors \(String(a.flavorDescription))")
-            }
-        
-        
+    
+        //每次抓取TableView資料時 , 先清空showProductArray
+        showProductArray.removeAll()
+        clickProductArray.removeAll()
         //算被點擊的product
         for fetchProduct in getProductArray {
             if fetchProduct.storeID == selectStoreID{
                 showProductArray.append(fetchProduct)
-                
-                for clickProduct in showProductArray{
-                    if clickProduct.productID == selectProductID {
-                        clickProductArray.append(clickProduct)
-                        print("print clickProductArray \(clickProductArray)")
-                    }
-                }
             }
+        }
+        
+        for clickProduct in showProductArray{
+                clickProductArray.append(clickProduct)
         }
     }
     
@@ -96,7 +96,28 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
-   
+    
+    //點擊我的最愛by店家
+    @IBAction func store_Favorites(sender: AnyObject) {
+        var storeFlavorites : NSDictionary = [:]
+        var storeID : AnyObject = ""
+        let uid = self.NSuser.objectForKey("uid")
+        
+        if uid == nil {
+            return fatalError()
+        }
+        let user = uid
+        storeID = self.selectStoreID!
+        
+        storeFlavorites = [user as! String : true]
+        let storeFavorites = conditionRef.child("Coffee").childByAppendingPath("storeFavorites").childByAppendingPath(storeID as! String)
+        storeFavorites.setValue(storeFlavorites)
+        //query firebase
+//        conditionRef.child("Coffee/favorites").child(storeID as! String).queryOrderedByChild(user as! String).queryEqualToValue(true).observeEventType(.value, withBlock:{ snapshot in
+//            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+//        })
+    }
+
 
      func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -123,8 +144,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
 
         cell.productsNameForCell.text = self.showProductArray[indexPath.row].productName
-        print("\(showProductArray[indexPath.row].productName)")
-
         
         return cell
     }
@@ -154,18 +173,10 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 guard let productCell = sender as? ProductsViewCell else {
                     return
                 }
-                guard let indexPath = productsCollection?.indexPathForCell(productCell) as? NSIndexPath! else {
+                guard let indexPath = productsCollection?.indexPathForCell(productCell) as! NSIndexPath? else {
                     return
                 }
                 indexPath.row
-                
-                print("prepareForsegue \(self.showProductArray[indexPath.row].productName)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].producer)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].productImage)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].manor)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].weight)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].price)")
-                print("prepareForsegue \(self.showProductArray[indexPath.row].flavorDescription)")
                 
                 productVC.name = self.clickProductArray[indexPath.row].productName
                 productVC.producer = self.clickProductArray[indexPath.row].producer
@@ -174,6 +185,10 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 productVC.flavorDescription = self.clickProductArray[indexPath.row].flavorDescription
                 productVC.price = self.clickProductArray[indexPath.row].price
                 productVC.image = self.clickProductArray[indexPath.row].productImage
+                productVC.productId = self.clickProductArray[indexPath.row].productID
+                
+                //傳整包點選商品的Array到商品頁
+                productVC.showProduct = self.clickProductArray
                 
             }
         }

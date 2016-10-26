@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class StoreTableViewController: UITableViewController {
+class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -19,12 +19,19 @@ class StoreTableViewController: UITableViewController {
     var products = [Products]()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getStoredData()
-        getProductData()
         
+        //delegate FirebaseData
+        FirebaseData.shared.delegate = self
+        
+        //call Firebase fetchStore func
+        FirebaseData.shared.fetchStore()
+        
+        //call Firebase fetchPrducts func
+        FirebaseData.shared.fetchProducts()
         
         //spinner
         spinner.hidesWhenStopped = true
@@ -32,16 +39,31 @@ class StoreTableViewController: UITableViewController {
         view.addSubview(spinner)
         spinner.startAnimating()
         
-        //UIRefreshControl - 下拉更新, 呼叫refresh func
-        self.refreshControl?.addTarget(self, action: #selector(StoreTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        
+        //refresh control
+        refreshControl = UIRefreshControl()
+        self.view.addSubview(refreshControl!)
         
     }
     
-    override func didReceiveMemoryWarning() {        
+    func getStoreData(manager: FirebaseData, didGetStoreData: [Stores]) {
+        stores = didGetStoreData
+        self.tableView.reloadData()
+        
+        //stop spinner
+        self.spinner.stopAnimating()
+    }
+    
+    func getProductData(manager: FirebaseData, didGetProductsData: [Products]) {
+        products = didGetProductsData
+    }
+    
+    
+    
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Table view data source
     
@@ -54,6 +76,7 @@ class StoreTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return stores.count
     }
+    
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -78,7 +101,7 @@ class StoreTableViewController: UITableViewController {
         }else{
             cell.isFood.hidden = true
         }
-            
+        
         if stores[indexPath.row].isDrink == "Y" {
             cell.isDrink.image = UIImage(named:"Drink")
         }else{
@@ -97,93 +120,21 @@ class StoreTableViewController: UITableViewController {
             cell.isWifi.hidden = true
         }
         
-      
+        //UIRefreshControl - 下拉更新, 呼叫refresh func
+        self.refreshControl?.addTarget(self, action: #selector(StoreTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        
         return cell
     }
-    
-    func getStoredData() {
-        //抓取NSUserDefault 1-3 的值
-           var n = 1
-            for select in 1...3 {
-                if let selectFlavorID = self.flavorSet.objectForKey("FlavorSelect_\(n)") as? NSNumber {
-                    n += 1
-        
-            conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(selectFlavorID)").observeEventType(.Value, withBlock:{ snapshot in
-            //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
-            
-            for child in snapshot.children {
-                
-                let storeID_1 = child.value["storeID"]
-                guard let id_1 = storeID_1 as? String else{
-                    fatalError()
-                }
-                //依照productID取得Store資料
-                self.conditionRef.child("coffee/Stores").queryOrderedByChild("storeID").queryEqualToValue(id_1).observeEventType(.ChildAdded, withBlock:{ snapshot in
-                    print ("stores KEY\(snapshot.key) . Store Value\(snapshot.value)")
-                    
-                    if let getFlavor = snapshot.value as? NSDictionary {
-                        let getStore = Stores(data: getFlavor)
-                             //判斷重複store的開關
-                             var haveSameStore = false
-                        
-                             //判斷重複
-                             for store in self.stores {
-                                if store.storeID == getStore.storeID {
-                                    haveSameStore = true
-                                }
-                            }
-                             //重複為false的時候才把store加到stores array
-                            if !haveSameStore {
-                                self.stores.append(getStore)
-                            }else{
-                                print("add to array fails")
-                            }
-                        //重新整理tableview
-                        self.spinner.stopAnimating()
-                        self.tableView.reloadData()
-                        
-                    }else {
-                        print("Please check your Network")
-                    }
-                })
-            }
-            })
-        }
-    }
-    }
-    
-    
-    func getProductData() {
-        //抓取NSUserDefault 1-3 的值
-           var n = 1
-            for select in 1...3 {
-                if let selectProductFlavorID = self.flavorSet.objectForKey("FlavorSelect_\(n)") as? NSNumber{
-                    n += 1
-                    
-            conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(selectProductFlavorID)").observeEventType(.ChildAdded, withBlock:{ snapshot in
-                print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
-                
-                if let getProductFlavor = snapshot.value as? NSDictionary {
-                    let getProduct = Products(data: getProductFlavor)
-                    self.products.append(getProduct)
-                    // talbeView.reloadData()
-                }else {
-                    print("getProductData fails")
-                }
-            })
-            }
-        }
-    }
-    
     
     //下拉更新
     func refresh(sender:AnyObject)
     {
-        self.getStoredData() //重取資料
+        //self.getStoredData() //重取資料
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
-
+    
     //傳送資料至商品清單頁
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showProductList" {
@@ -196,7 +147,9 @@ class StoreTableViewController: UITableViewController {
                 guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
                     return
                 }
+                
                 indexPaxh.row
+                //FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
@@ -212,11 +165,11 @@ class StoreTableViewController: UITableViewController {
                 productList.getProductArray = self.products
                 productList.getStoreArray = self.stores
                 
+                
+                
             }
             
         }
     }
-
+    
 }
-
-

@@ -8,13 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		54AC686AE6E29895ECF07395 /* Pods_TaipeiGoodCoffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */; };
+		9F17CE8E1DB3A0980097407D /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE8D1DB3A0980097407D /* order.swift */; };
+		9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE911DB3C2DA0097407D /* CartViewController.swift */; };
+		9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CE931DB3C46D0097407D /* CreditCard.swift */; };
+		9F17CEDE1DB4EEFC0097407D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */; };
+		9F17CEE01DB4EF710097407D /* ATMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17CEDF1DB4EF710097407D /* ATMViewController.swift */; };
 		9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */; };
 		9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */; };
+		9F46AD781DBA1BF2000E417B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F46AD771DBA1BF2000E417B /* Info.plist */; };
 		9F8580311DA48EF900211B6F /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580301DA48EF900211B6F /* products.swift */; };
 		9F8580351DA53E8200211B6F /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580341DA53E8200211B6F /* post.swift */; };
 		9F8580371DA572CC00211B6F /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8580361DA572CC00211B6F /* store.swift */; };
+		9F8844AD1DB7198600A4AA1F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */; };
+		9F8844AF1DB742AC00A4AA1F /* CreditCardValidated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */; };
+		9F8844C11DB8A6B300A4AA1F /* OrderCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */; };
 		9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A271D9CD88800AAA250 /* AppDelegate.swift */; };
-		9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A2B1D9CD88800AAA250 /* Main.storyboard */; };
 		9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */; };
 		9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A311D9CD88800AAA250 /* Assets.xcassets */; };
 		9F979A351D9CD88800AAA250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */; };
@@ -25,6 +33,8 @@
 		9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064341DAC7A3D003BA61C /* ViewController.swift */; };
 		9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064401DACD627003BA61C /* ProductsViewCell.swift */; };
 		9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA064421DAF5A32003BA61C /* ProductViewController.swift */; };
+		9FB36E5A1DB8ED6300E2BAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB36E581DB8ED6300E2BAC1 /* Main.storyboard */; };
+		9FB36E5C1DB9E60300E2BAC1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9FB36E5B1DB9E60300E2BAC1 /* .gitignore */; };
 		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
 		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
 		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
@@ -36,18 +46,25 @@
 		164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.debug.xcconfig"; sourceTree = "<group>"; };
 		657442C6F593BC66FBF1D46F /* Pods_TaipeiGoodCoffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaipeiGoodCoffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaipeiGoodCoffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaipeiGoodCoffee/Pods-TaipeiGoodCoffee.release.xcconfig"; sourceTree = "<group>"; };
+		9F17CE8D1DB3A0980097407D /* order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = order.swift; sourceTree = "<group>"; };
+		9F17CE911DB3C2DA0097407D /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		9F17CE931DB3C46D0097407D /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		9F17CEDF1DB4EF710097407D /* ATMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMViewController.swift; sourceTree = "<group>"; };
 		9F2BEC4F1D9E43A4002FDF3A /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		9F2BEC561D9F93C1002FDF3A /* FBLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogoutViewController.swift; sourceTree = "<group>"; };
+		9F46AD771DBA1BF2000E417B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8580301DA48EF900211B6F /* products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		9F8580341DA53E8200211B6F /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		9F8580361DA572CC00211B6F /* store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
+		9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidated.swift; sourceTree = "<group>"; };
+		9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCompleteViewController.swift; sourceTree = "<group>"; };
 		9F979A241D9CD88800AAA250 /* TaipeiGoodCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiGoodCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F979A271D9CD88800AAA250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F979A2C1D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F979A2F1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaipeiGoodCoffee.xcdatamodel; sourceTree = "<group>"; };
 		9F979A311D9CD88800AAA250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F979A341D9CD88800AAA250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F979A361D9CD88800AAA250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F979A3D1D9D10A500AAA250 /* FlavorsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorsCollectionViewController.swift; sourceTree = "<group>"; };
 		9F979A411D9D179100AAA250 /* FlavorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -55,6 +72,8 @@
 		9FA064341DAC7A3D003BA61C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FA064401DACD627003BA61C /* ProductsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewCell.swift; sourceTree = "<group>"; };
 		9FA064421DAF5A32003BA61C /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		9FB36E591DB8ED6300E2BAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FB36E5B1DB9E60300E2BAC1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
@@ -94,6 +113,7 @@
 		9F979A1B1D9CD88800AAA250 = {
 			isa = PBXGroup;
 			children = (
+				9FB36E5B1DB9E60300E2BAC1 /* .gitignore */,
 				9F979A261D9CD88800AAA250 /* TaipeiGoodCoffee */,
 				9F979A251D9CD88800AAA250 /* Products */,
 				4381FDBC9D8D9BBD102816E4 /* Pods */,
@@ -116,10 +136,10 @@
 				9F979A431D9D1CA700AAA250 /* Controller */,
 				9F979A3C1D9D101E00AAA250 /* View */,
 				9F979A271D9CD88800AAA250 /* AppDelegate.swift */,
-				9F979A2B1D9CD88800AAA250 /* Main.storyboard */,
+				9FB36E581DB8ED6300E2BAC1 /* Main.storyboard */,
 				9F979A311D9CD88800AAA250 /* Assets.xcassets */,
 				9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */,
-				9F979A361D9CD88800AAA250 /* Info.plist */,
+				9F46AD771DBA1BF2000E417B /* Info.plist */,
 				9F979A2E1D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld */,
 				9F979A441D9E359F00AAA250 /* GoogleService-Info.plist */,
 			);
@@ -139,6 +159,11 @@
 		9F979A431D9D1CA700AAA250 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F17CEDF1DB4EF710097407D /* ATMViewController.swift */,
+				9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */,
+				9F17CE911DB3C2DA0097407D /* CartViewController.swift */,
+				9F8844C01DB8A6B300A4AA1F /* OrderCompleteViewController.swift */,
+				9F8844AC1DB7198600A4AA1F /* SettingViewController.swift */,
 				9FA064321DABB07B003BA61C /* MapViewController.swift */,
 				9FECAE7D1DA9292C00798622 /* ProductsViewController.swift */,
 				9FA064421DAF5A32003BA61C /* ProductViewController.swift */,
@@ -154,6 +179,9 @@
 		9FE062961DA2625E0020E0E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9F17CE931DB3C46D0097407D /* CreditCard.swift */,
+				9F17CE8D1DB3A0980097407D /* order.swift */,
+				9F8844AE1DB742AC00A4AA1F /* CreditCardValidated.swift */,
 				9FE062971DA2691C0020E0E4 /* storeModel.swift */,
 				9F8580301DA48EF900211B6F /* products.swift */,
 				9FE062941DA2269A0020E0E4 /* getFirebase.swift */,
@@ -198,6 +226,7 @@
 				TargetAttributes = {
 					9F979A231D9CD88800AAA250 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6HBN5G7WS6;
 					};
 				};
 			};
@@ -224,10 +253,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB36E5C1DB9E60300E2BAC1 /* .gitignore in Resources */,
 				9F979A351D9CD88800AAA250 /* LaunchScreen.storyboard in Resources */,
 				9F979A451D9E359F00AAA250 /* GoogleService-Info.plist in Resources */,
 				9F979A321D9CD88800AAA250 /* Assets.xcassets in Resources */,
-				9F979A2D1D9CD88800AAA250 /* Main.storyboard in Resources */,
+				9FB36E5A1DB8ED6300E2BAC1 /* Main.storyboard in Resources */,
+				9F46AD781DBA1BF2000E417B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,44 +317,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F17CEE01DB4EF710097407D /* ATMViewController.swift in Sources */,
 				9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */,
 				9F8580311DA48EF900211B6F /* products.swift in Sources */,
 				9F8580351DA53E8200211B6F /* post.swift in Sources */,
+				9F17CEDE1DB4EEFC0097407D /* CreditCardViewController.swift in Sources */,
 				9F8580371DA572CC00211B6F /* store.swift in Sources */,
 				9FE062981DA2691C0020E0E4 /* storeModel.swift in Sources */,
 				9F2BEC501D9E43A4002FDF3A /* FBLoginViewController.swift in Sources */,
 				9FA064431DAF5A32003BA61C /* ProductViewController.swift in Sources */,
 				9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */,
 				9F2BEC571D9F93C1002FDF3A /* FBLogoutViewController.swift in Sources */,
+				9F8844AD1DB7198600A4AA1F /* SettingViewController.swift in Sources */,
+				9F17CE941DB3C46D0097407D /* CreditCard.swift in Sources */,
 				9FA064411DACD627003BA61C /* ProductsViewCell.swift in Sources */,
+				9F8844AF1DB742AC00A4AA1F /* CreditCardValidated.swift in Sources */,
 				9FECAE7E1DA9292C00798622 /* ProductsViewController.swift in Sources */,
+				9F8844C11DB8A6B300A4AA1F /* OrderCompleteViewController.swift in Sources */,
 				9F979A301D9CD88800AAA250 /* TaipeiGoodCoffee.xcdatamodeld in Sources */,
+				9F17CE921DB3C2DA0097407D /* CartViewController.swift in Sources */,
 				9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */,
 				9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */,
 				9F979A281D9CD88800AAA250 /* AppDelegate.swift in Sources */,
 				9FA064331DABB07B003BA61C /* MapViewController.swift in Sources */,
 				9FA064351DAC7A3D003BA61C /* ViewController.swift in Sources */,
 				9F979A421D9D179100AAA250 /* FlavorCollectionViewCell.swift in Sources */,
+				9F17CE8E1DB3A0980097407D /* order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9F979A2B1D9CD88800AAA250 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F979A2C1D9CD88800AAA250 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9F979A331D9CD88800AAA250 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9F979A341D9CD88800AAA250 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9FB36E581DB8ED6300E2BAC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FB36E591DB8ED6300E2BAC1 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -405,8 +444,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -417,6 +457,8 @@
 			baseConfigurationReference = 164E648C1F0C0FECB902976B /* Pods-TaipeiGoodCoffee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
@@ -428,9 +470,11 @@
 					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
 				);
 				INFOPLIST_FILE = TaipeiGoodCoffee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.exercise.TaipeiGoodCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -439,6 +483,8 @@
 			baseConfigurationReference = 8367CF46CC3D5B12728CA140 /* Pods-TaipeiGoodCoffee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
@@ -451,9 +497,11 @@
 					/Users/Allen/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = TaipeiGoodCoffee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.exercise.TaipeiGoodCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

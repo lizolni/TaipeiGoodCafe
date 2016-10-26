@@ -14,7 +14,7 @@ import FirebaseAuth
 
 
 class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
-
+    
     
     @IBOutlet weak var loadSpinner: UIActivityIndicatorView!
     
@@ -27,17 +27,33 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         loginButton.hidden = true
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if let user = user {
+            
+            let n = 1
+            
+            if user != nil {
                 
-//                let mainStoryboard : UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
-//                let FlavorSelectController : UIViewController = mainStoryboard.instantiateViewcontrollerWithIdentifier("FlavorsCollectionViewController")
-//                self.presentViewController(FlavorsCollectionViewController, animated:true, completion:nil)
+                //儲存 firebase login user uid to NSUserDefault
+                NSUserDefaults.standardUserDefaults().setObject(FIRAuth.auth()!.currentUser!.uid, forKey: "uid")
+                NSUserDefaults.standardUserDefaults().synchronize()
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("FlavorsCollectionViewController") as! UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
+                //判斷是否有儲存已選擇的味道
+                if NSUserDefaults.standardUserDefaults().objectForKey("FlavorSelect_\(n)") != nil{
+                    
+                    //舊用戶 -> 轉跳頁面至 store TableView
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as? UITabBarController
+                    self.presentViewController(vc!, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    //新用戶 -> 轉跳頁面至flavor select
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewControllerWithIdentifier("FlavorsCollectionViewController") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
                 
             } else {
+                //取得facebook用戶public_profile、email、user_friends的權限
                 
                 self.loginButton.center = self.view.center
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
@@ -49,7 +65,6 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
             }
         }
-        
     }
     
     
@@ -71,19 +86,19 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             loadSpinner.stopAnimating()
             
         } else {
-        //沒有發生錯誤及取消login facebook，即向firebase註冊新帳號
+            //沒有發生錯誤及取消login facebook，即向firebase註冊新帳號
             let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user login  firebase app")
             }
             
         }
-    
+        
     }
     func loginButtonDidLogOut(loginButton:FBSDKLoginButton!){
         print("user did logout")
     }
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
