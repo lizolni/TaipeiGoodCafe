@@ -61,12 +61,18 @@ class FirebaseData {
                                 
                                 //判斷重複
                                 for store in self.stores {
+                                    print("storeID \(store.storeID)")
                                     if store.storeID == getStore.storeID {
+                                        print("getStore \(getStore.storeID)")
+                                        //print(getStore.storeID)
+                                        
+                                        
                                         haveSameStore = true
                                     }
                                 }
                                 //重複為false的時候才把store加到stores array
                                 if !haveSameStore {
+                                    print(haveSameStore)
                                     self.stores.append(getStore)
                                 }else{
                                     print("add to array fails")
@@ -94,14 +100,13 @@ class FirebaseData {
                 n += 1
                 
                 conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(selectProductFlavorID)").observeEventType(.ChildAdded, withBlock:{ snapshot in
-                    //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+                    print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
                     
                     if let getProductFlavor = snapshot.value as? NSDictionary {
                         let getProduct = Products(data: getProductFlavor)
                         self.products.append(getProduct)
-                        // talbeView.reloadData()
-                    }else {
-                        print("getProductData fails")
+                        }else {
+                        print("getProductData fails") 
                     }
                     self.delegate?.getProductData(self, didGetProductsData: self.products)
                 })

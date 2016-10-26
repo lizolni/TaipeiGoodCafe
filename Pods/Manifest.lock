@@ -5,7 +5,6 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - CreditCardValidator (0.3.2)
   - FBSDKCoreKit (4.15.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.15.1):
@@ -51,7 +50,6 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
 
 DEPENDENCIES:
-  - CreditCardValidator
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -62,7 +60,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  CreditCardValidator: f2e0fc0f273e3f303513d35745df23d336eb1d67
   FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
   FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
   FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
@@ -77,6 +74,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
 
-PODFILE CHECKSUM: c66df67d7b109cd853ee1662c7b21ef2e7c40a03
+PODFILE CHECKSUM: 313b8c31f17a7a8b4c53037f769015a535ddc68d
 
 COCOAPODS: 1.0.1

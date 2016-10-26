@@ -10,6 +10,7 @@
         import Firebase
         import FBSDKLoginKit
         import FBSDKCoreKit
+        //import <Google/Analytics.h>
         
         @UIApplicationMain
         class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,9 @@
                 FIRApp.configure()
                 
                 FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+                
+                FIRAnalytics.logEventWithName(kFIREventAppOpen, parameters: ["LaunchApp":"1"])
+                
                 
                 return true
             }

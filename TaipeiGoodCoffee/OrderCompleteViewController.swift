@@ -47,12 +47,18 @@ class OrderCompleteViewController: UIViewController {
     func getOrderResult(){
         
         //Get User ID
-        let uid = user.objectForKey("uid")
+        guard let uid = user.objectForKey("uid") as? String else {fatalError()}
+        print("uid \(uid)")
+        
+        
+        
+        conditionRef.child("Coffee/Orders").queryOrderedByKey().observeEventType(.ChildAdded, withBlock: { snapshot in
+            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
         
         //fetch firebase Coffee/Order/uid
-        conditionRef.child("Coffee/Orders").queryOrderedByChild("userID").queryEqualToValue("\(uid)").observeEventType(.Value, withBlock:{ snapshot in
-            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+//        conditionRef.child("Coffee/Orders").queryOrderedByChild("userID").queryEqualToValue(uid).observeEventType(.ChildAdded, withBlock:{ snapshot in
+//          
+//            //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
         })
     }
-    
 }

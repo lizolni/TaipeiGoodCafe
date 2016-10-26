@@ -58,18 +58,19 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 self.storeImage.image = UIImage(data:data)
                 }
             }
-        
+    
+        //每次抓取TableView資料時 , 先清空showProductArray
+        showProductArray.removeAll()
+        clickProductArray.removeAll()
         //算被點擊的product
         for fetchProduct in getProductArray {
             if fetchProduct.storeID == selectStoreID{
                 showProductArray.append(fetchProduct)
-                
-                for clickProduct in showProductArray{
-                    if clickProduct.productID == selectProductID {
-                        clickProductArray.append(clickProduct)
-                   }
-                }
             }
+        }
+        
+        for clickProduct in showProductArray{
+                clickProductArray.append(clickProduct)
         }
     }
     
@@ -143,8 +144,6 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
 
         cell.productsNameForCell.text = self.showProductArray[indexPath.row].productName
-        print("\(showProductArray[indexPath.row].productName)")
-
         
         return cell
     }
@@ -174,7 +173,7 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 guard let productCell = sender as? ProductsViewCell else {
                     return
                 }
-                guard let indexPath = productsCollection?.indexPathForCell(productCell) as? NSIndexPath! else {
+                guard let indexPath = productsCollection?.indexPathForCell(productCell) as! NSIndexPath? else {
                     return
                 }
                 indexPath.row

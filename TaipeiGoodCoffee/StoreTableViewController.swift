@@ -147,7 +147,9 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 guard let indexPaxh = tableView?.indexPathForCell(storeSender) as? NSIndexPath! else{
                     return
                 }
+                
                 indexPaxh.row
+                //FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
@@ -162,6 +164,8 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 //傳整包Store及product
                 productList.getProductArray = self.products
                 productList.getStoreArray = self.stores
+                
+                
                 
             }
             

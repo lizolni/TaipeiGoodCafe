@@ -16,6 +16,5 @@ target 'TaipeiGoodCoffee' do
    pod 'FBSDKLoginKit'
    pod ‘Firebase/Database’
 
-   pod "CreditCardValidator"
   
 end

@@ -97,6 +97,16 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
     }
     
     func saveOrder(){
+
+        //Get currentTime
+        let currentFormat = NSDateFormatter()
+        currentFormat.dateFormat = "MM-dd-yy HH:MM"
+        let currentDate = NSDate()
+        let stringofData = currentFormat.stringFromDate(currentDate)
+        print(stringofData)
+        
+  
+        
         //enum init
         var atmPayment = payments.ATM
         var ccPayment = payments.creditCard
@@ -129,13 +139,15 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
             "prodPrice":orderProdPrice!,
             "prodShipping":orderProdShip!,
             "checkoutPrice":orderCheckout!,
-            "paymentType": paymentType
+            "paymentType": paymentType,
+            "createdTime" : stringofData
         ]
         
         // 加上判斷全部都有值才能儲到firebase
         // childByAutoId -> firebase 自動產生亂數ID (訂單ID)
         let saveOrdertoFirebase = conditionRef.child("Coffee").childByAppendingPath("Orders").childByAutoId()
-        saveOrdertoFirebase.setValue(order)
+            //saveOrdertoFirebase.setValue(["createdTime":FIRServerValue.timestamp()])
+            saveOrdertoFirebase.setValue(order)
         
         //轉跳頁面到訂單完成頁
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -144,7 +156,6 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
 
         self.navigationController?.pushViewController(vc, animated: true)
         //self.presentViewController(vc, animated: true, completion: nil)
-
     }
     
         //validated creditCard
@@ -386,4 +397,53 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
     
 
 
+}
+
+extension NSDate
+{
+    
+    func year() -> Int
+    {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.Year, fromDate: self)
+        let year = components.year
+        
+        //Return year
+        return year
+
+    }
+    
+    func hour() -> Int
+    {
+        //Get Hour
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.Hour, fromDate: self)
+        let hour = components.hour
+        
+        //Return Hour
+        return hour
+    }
+    
+    
+    func minute() -> Int
+    {
+        //Get Minute
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.Minute, fromDate: self)
+        let minute = components.minute
+        
+        //Return Minute
+        return minute
+    }
+    
+    func toShortTimeString() -> String
+    {
+        //Get Short Time String
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        let timeString = formatter.stringFromDate(self)
+        
+        //Return Short Time String
+        return timeString
+    }
 }
