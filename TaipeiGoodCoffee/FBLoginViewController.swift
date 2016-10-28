@@ -63,6 +63,8 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
                 self.loginButton.hidden = false
                 
+                
+                
             }
         }
     }
@@ -90,6 +92,10 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
             FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
                 print("user login  firebase app")
+                
+                //GA
+                FIRAnalytics.logEventWithName("facebook_Login", parameters:nil)
+                
             }
             
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingViewController: UIViewController {
     
@@ -29,6 +30,10 @@ class SettingViewController: UIViewController {
                 
                 //pass "false" to FlavorsCollectionViewController
                 reSetFlavor.reSetButtonVisible = passButtonVisible
+                
+                //GA
+                FIRAnalytics.logEventWithName("reSetFlavor", parameters: nil)
+                
                 
             }
         }

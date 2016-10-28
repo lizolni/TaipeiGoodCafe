@@ -24,6 +24,8 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         super.viewDidLoad()
         
         
+        
+        
         //delegate FirebaseData
         FirebaseData.shared.delegate = self
         
@@ -149,7 +151,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 }
                 
                 indexPaxh.row
-                //FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
+                
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
@@ -164,6 +166,10 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 //傳整包Store及product
                 productList.getProductArray = self.products
                 productList.getStoreArray = self.stores
+                
+                //GA
+                FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
+                
                 
                 
                 

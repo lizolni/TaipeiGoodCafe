@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 
 enum payments {
@@ -102,12 +103,9 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         let currentFormat = NSDateFormatter()
         currentFormat.dateFormat = "MM-dd-yy HH:MM"
         let currentDate = NSDate()
-        let stringofData = currentFormat.stringFromDate(currentDate)
-        print(stringofData)
+        let orderDate = currentFormat.stringFromDate(currentDate)
         
-  
-        
-        //enum init
+        //enum
         var atmPayment = payments.ATM
         var ccPayment = payments.creditCard
         //get data
@@ -140,7 +138,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
             "prodShipping":orderProdShip!,
             "checkoutPrice":orderCheckout!,
             "paymentType": paymentType,
-            "createdTime" : stringofData
+            "createdTime" : orderDate
         ]
         
         // 加上判斷全部都有值才能儲到firebase
@@ -148,6 +146,18 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         let saveOrdertoFirebase = conditionRef.child("Coffee").childByAppendingPath("Orders").childByAutoId()
             //saveOrdertoFirebase.setValue(["createdTime":FIRServerValue.timestamp()])
             saveOrdertoFirebase.setValue(order)
+        
+        //GA
+        
+            FIRAnalytics.logEventWithName( "order_complete", parameters: [
+            "userID": uid as! NSObject,
+            "productID": orderProdID as NSObject,
+            "prodPrice": orderProdPrice! as NSObject,
+            "prodShipping": orderProdShip! as NSObject,
+            "checkoutPrice": orderCheckout! as NSObject,
+            "createdTime": orderDate as NSObject
+            ])
+        
         
         //轉跳頁面到訂單完成頁
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -158,8 +168,7 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         //self.presentViewController(vc, animated: true, completion: nil)
     }
     
-        //validated creditCard
-        //creditCardVerify()
+ 
     
     @IBAction func callPicker(sender: AnyObject) {
         countTotalPrice()

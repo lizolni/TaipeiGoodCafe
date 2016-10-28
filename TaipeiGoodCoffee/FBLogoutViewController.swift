@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FirebaseAuth
+import Firebase
 
 class FBLogoutViewController: UIViewController {
     
@@ -37,9 +38,8 @@ class FBLogoutViewController: UIViewController {
         let vc = storyboard.instantiateViewControllerWithIdentifier("FBLogin") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
         
-        
-        
-        
+        //GA
+        FIRAnalytics.logEventWithName("facebook_Logout", parameters: nil)
         
     }
     override func viewDidLoad() {

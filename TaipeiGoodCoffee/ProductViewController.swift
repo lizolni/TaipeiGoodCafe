@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class ProductViewController: UIViewController {
     
@@ -66,6 +67,10 @@ class ProductViewController: UIViewController {
                 addToCart.getProdImage = self.image
                 addToCart.getProdID = self.productId
                 
+                //GA
+                FIRAnalytics.logEventWithName("addToCart", parameters: nil)
+                
+                
             }
         }
     }
@@ -85,6 +90,9 @@ class ProductViewController: UIViewController {
         prodFlavorites = [user as! String : true]
         let addProdFlavoritesTOFirebase = conditionRef.child("Coffee").childByAppendingPath("productFavorites").childByAppendingPath(productId)
         addProdFlavoritesTOFirebase.setValue(prodFlavorites)
+        
+        //GA
+        FIRAnalytics.logEventWithName("Product_Favorites", parameters: nil)
         
         
     }

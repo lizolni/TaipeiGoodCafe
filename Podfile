@@ -15,6 +15,8 @@ target 'TaipeiGoodCoffee' do
    pod 'FBSDKShareKit'
    pod 'FBSDKLoginKit'
    pod ‘Firebase/Database’
+   pod 'Firebase/Core'
+  
 
   
 end

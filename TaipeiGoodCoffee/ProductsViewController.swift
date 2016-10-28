@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import FirebaseDatabase
+import Firebase
 
 
 class ProductsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,SFSafariViewControllerDelegate {
@@ -86,12 +87,19 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 //設定delegate
                 safariViewController.delegate = self
                 self.presentViewController(safariViewController, animated: true, completion: nil)
+                
+                //GA
+                FIRAnalytics.logEventWithName("FB_FanPage", parameters: nil)
+                
             }
         } else {
             //iOS 8
             if let fbImageUrl = facebookFanPage as? String! {
                 let url = NSURL(string:(fbImageUrl as? String)!)!
                 UIApplication.sharedApplication().openURL(url)
+                
+                //GA
+                FIRAnalytics.logEventWithName("FB_FanPage", parameters: nil)
             }
         }
     }
@@ -112,6 +120,10 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         storeFlavorites = [user as! String : true]
         let storeFavorites = conditionRef.child("Coffee").childByAppendingPath("storeFavorites").childByAppendingPath(storeID as! String)
         storeFavorites.setValue(storeFlavorites)
+        
+        //GA
+        FIRAnalytics.logEventWithName("Store_Faorites", parameters: nil)
+        
         //query firebase
 //        conditionRef.child("Coffee/favorites").child(storeID as! String).queryOrderedByChild(user as! String).queryEqualToValue(true).observeEventType(.value, withBlock:{ snapshot in
 //            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
@@ -167,6 +179,9 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 passLocationVC.getStoreLongtitude = getLongitude
                 passLocationVC.getStoreNameForMap = getStoreName
                 
+                //GA
+                FIRAnalytics.logEventWithName("View_Map", parameters: nil)
+                
             }
         } else if segue.identifier == "showProduct" {  //傳送collectionView被點選的商品資料至商品頁
             if let productVC = segue.destinationViewController as? ProductViewController{
@@ -189,6 +204,9 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
                 
                 //傳整包點選商品的Array到商品頁
                 productVC.showProduct = self.clickProductArray
+                
+                //GA
+                FIRAnalytics.logEventWithName("\(clickProductArray[indexPath.row].productName)", parameters: nil)
                 
             }
         }

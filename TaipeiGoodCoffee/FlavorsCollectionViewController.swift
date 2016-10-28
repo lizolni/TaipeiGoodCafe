@@ -201,6 +201,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
         var info = flavorData[indexPath.row]
         if info.isSelect {
             
+            
             //淺藍色
             cell.backgroundColor = UIColor(red: 237/255, green: 1, blue: 1, alpha: 1)
             
