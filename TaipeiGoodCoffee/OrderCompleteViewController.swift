@@ -92,7 +92,9 @@ class OrderCompleteViewController: UIViewController {
             self.receiverPhone.text = self.getOrders[0].receiverPhone
             self.receiverAddress.text  = self.getOrders[0].receiverAddress
             self.orderPrice.text = self.getOrders[0].checkoutPrice
-       
+            
+            
+        
                 
             self.conditionRef.child("coffee/Products").queryOrderedByChild("productID").queryEqualToValue("\(self.getOrders[0].productID)").observeEventType(.ChildAdded, withBlock:{ snapshot in
             

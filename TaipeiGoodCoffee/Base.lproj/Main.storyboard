@@ -93,6 +93,11 @@
                                         <constraint firstAttribute="height" constant="30" id="lJi-bi-LoC"/>
                                     </constraints>
                                     <state key="normal" title="確定"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="saveFlavor:" destination="B1f-B7-DlH" eventType="touchUpInside" id="oaW-rJ-9IF"/>
                                     </connections>
@@ -105,6 +110,11 @@
                                 <constraint firstItem="jEQ-xd-L1u" firstAttribute="centerX" secondItem="5xB-Gn-YrD" secondAttribute="centerX" id="cto-oL-eeZ"/>
                                 <constraint firstAttribute="trailing" secondItem="jEQ-xd-L1u" secondAttribute="trailing" id="gMw-Eg-tKy"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlavorCell" id="O3E-Dl-YQZ" customClass="FlavorCollectionViewCell" customModule="TaipeiGoodCoffee" customModuleProvider="target">
@@ -132,6 +142,11 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="8Rd-ld-D3k" secondAttribute="trailing" constant="-8" id="HDb-wY-NGX"/>
                                     <constraint firstItem="8Rd-ld-D3k" firstAttribute="top" secondItem="O3E-Dl-YQZ" secondAttribute="topMargin" constant="63" id="ueb-St-bFB"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="flavorName" destination="8Rd-ld-D3k" id="Qr0-un-sX1"/>
                                 </connections>
@@ -149,8 +164,8 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="風味選擇" id="nTu-yg-3UG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="REy-pT-bUn">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title=" 儲存" id="REy-pT-bUn">
+                            <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="reSaveFlavors:" destination="B1f-B7-DlH" id="6sr-h6-vLA"/>
                             </connections>
@@ -207,9 +222,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Eiu-dj-AQZ" kind="relationship" relationship="viewControllers" id="uiJ-i0-6b4"/>
-                        <segue destination="mMl-fZ-zlz" kind="relationship" relationship="viewControllers" id="Obg-g5-gWg"/>
-                        <segue destination="Rzl-3i-aj0" kind="relationship" relationship="viewControllers" id="kVp-yK-Ph8"/>
-                        <segue destination="nMX-hn-65b" kind="relationship" relationship="viewControllers" id="oKO-QD-8Qm"/>
                         <segue destination="D15-NM-ZKL" kind="relationship" relationship="viewControllers" id="BZg-dW-3dt"/>
                     </connections>
                 </tabBarController>
@@ -236,14 +248,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Flavor Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CBE-v3-WJT">
-                                                    <rect key="frame" x="74" y="0.0" width="511" height="43.5"/>
+                                                    <rect key="frame" x="62" y="0.0" width="523" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Bean" id="b2M-VA-tGg">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="coffee-grain" id="b2M-VA-tGg">
+                                                    <rect key="frame" x="15" y="5" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -260,14 +272,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hnd-Vz-ROB">
-                                                    <rect key="frame" x="74" y="0.0" width="511" height="43.5"/>
+                                                    <rect key="frame" x="62" y="0.0" width="523" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="facebook" id="g7o-9F-jUg">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="facebook3" id="g7o-9F-jUg">
+                                                    <rect key="frame" x="15" y="5" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -375,7 +387,7 @@
         <scene sceneID="6PI-uU-MxR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rzl-3i-aj0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="購買紀錄" id="Sia-CQ-NSx"/>
+                    <tabBarItem key="tabBarItem" title="購買紀錄" image="Document2" id="Sia-CQ-NSx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RmL-Br-hO6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -449,7 +461,7 @@
         <scene sceneID="8Nv-O2-Gof">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D15-NM-ZKL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="設定" id="Dua-z2-Abl"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="Setting2" id="Dua-z2-Abl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GyF-Vh-17A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -462,9 +474,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z3-Tn-HiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="2836"/>
+            <point key="canvasLocation" x="1822" y="2956"/>
         </scene>
-        <!--找咖啡-->
+        <!--Store Table View Controller-->
         <scene sceneID="EKj-FQ-Pma">
             <objects>
                 <tableViewController storyboardIdentifier="StoreTableView" id="dUc-Tv-CyG" customClass="StoreTableViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
@@ -511,7 +523,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXQ-38-NFe" userLabel="Name">
                                             <rect key="frame" x="178" y="10" width="414" height="17"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.38823529411764707" green="0.49019607843137253" blue="0.34901960784313724" alpha="0.7578125" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF7-0w-VPS" userLabel="Phone">
@@ -568,6 +580,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="z8g-RE-zoO" secondAttribute="bottom" constant="1.5" id="zMt-KA-Kp7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="isDrink" destination="c5a-48-dMo" id="4XV-Jq-4Yf"/>
@@ -588,7 +601,7 @@
                             <outlet property="delegate" destination="dUc-Tv-CyG" id="zOx-1W-rpJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="找咖啡" id="RTR-u4-acq"/>
+                    <navigationItem key="navigationItem" id="RTR-u4-acq"/>
                     <connections>
                         <outlet property="spinner" destination="j1Y-94-5D7" id="xMb-R4-hKq"/>
                     </connections>
@@ -630,7 +643,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="djo-Md-X21"/>
                                             <constraint firstAttribute="width" constant="50" id="idN-cO-6Hq"/>
                                         </constraints>
-                                        <state key="normal" title="Facebook" image="facebook"/>
+                                        <state key="normal" title="Facebook" image="facebook2"/>
                                         <connections>
                                             <action selector="fbFanPage:" destination="dl9-XB-Mwf" eventType="touchUpInside" id="1L9-Vp-vtN"/>
                                         </connections>
@@ -641,7 +654,7 @@
                                             <constraint firstAttribute="width" constant="50" id="BUK-wH-wFq"/>
                                             <constraint firstAttribute="height" constant="50" id="OJa-I3-MxD"/>
                                         </constraints>
-                                        <state key="normal" title="Map" image="location"/>
+                                        <state key="normal" title="Map" image="Map"/>
                                         <connections>
                                             <segue destination="19J-QZ-k3E" kind="show" identifier="showStoreMap" id="5YJ-8P-gwn"/>
                                         </connections>
@@ -817,6 +830,11 @@
                                                             <constraint firstAttribute="height" constant="30" id="2Cu-rR-27c"/>
                                                         </constraints>
                                                         <state key="normal" title="送出"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <segue destination="fiG-xM-lsy" kind="show" identifier="addCart" id="pjm-dg-wuI"/>
                                                         </connections>
@@ -1260,7 +1278,7 @@
                                             <constraint firstItem="f5l-3a-EWn" firstAttribute="top" secondItem="GnX-8k-Unk" secondAttribute="bottom" constant="8" id="fdx-D7-Ga9"/>
                                             <constraint firstItem="w0j-0H-LMI" firstAttribute="leading" relation="lessThanOrEqual" secondItem="X7p-KJ-ql2" secondAttribute="trailing" constant="14" id="h0W-EV-ZaS"/>
                                             <constraint firstAttribute="trailing" secondItem="f5l-3a-EWn" secondAttribute="trailing" constant="36" id="mcK-q6-6Uf"/>
-                                            <constraint firstItem="f5l-3a-EWn" firstAttribute="leading" secondItem="X7p-KJ-ql2" secondAttribute="trailing" constant="52" id="pzs-eu-pzK"/>
+                                            <constraint firstItem="f5l-3a-EWn" firstAttribute="leading" secondItem="X7p-KJ-ql2" secondAttribute="trailing" constant="40" id="pzs-eu-pzK"/>
                                             <constraint firstItem="pes-Xr-A1Z" firstAttribute="top" secondItem="N6M-1N-g57" secondAttribute="bottom" constant="8" id="uhv-6M-rfX"/>
                                             <constraint firstItem="X7p-KJ-ql2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pes-Xr-A1Z" secondAttribute="trailing" constant="8" id="umo-rq-IBf"/>
                                             <constraint firstAttribute="bottom" secondItem="h7N-Lf-Xyh" secondAttribute="bottom" constant="25" id="unW-36-V43"/>
@@ -1488,6 +1506,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="Ppc-bb-Mox"/>
                                                 </constraints>
                                                 <state key="normal" title="送出訂單"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer." value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="CiY-sp-UFi"/>
@@ -1853,7 +1874,7 @@
         <scene sceneID="fe2-YB-FYR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mMl-fZ-zlz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的最愛" id="bT5-BO-ctf"/>
+                    <tabBarItem key="tabBarItem" title="我的最愛" image="favourite" id="bT5-BO-ctf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rag-Ut-Zmp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1872,7 +1893,7 @@
         <scene sceneID="bap-cX-e7d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nMX-hn-65b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="搜尋" id="k7K-G9-3dj"/>
+                    <tabBarItem key="tabBarItem" title="搜尋" image="search" id="k7K-G9-3dj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQe-Vj-gB8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1891,7 +1912,7 @@
         <scene sceneID="qSq-rb-JIe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eiu-dj-AQZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="找咖啡" id="rMT-0L-Ujw"/>
+                    <tabBarItem key="tabBarItem" title="找咖啡" image="coffeeFavorites" id="rMT-0L-Ujw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VDA-Bv-kQc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2060,15 +2081,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bean" width="128" height="128"/>
+        <image name="Document2" width="32" height="32"/>
         <image name="Drink" width="100" height="100"/>
         <image name="Food" width="100" height="100"/>
+        <image name="Map" width="128" height="128"/>
         <image name="Pet" width="100" height="100"/>
+        <image name="Setting2" width="32" height="32"/>
         <image name="Store" width="600" height="400"/>
         <image name="WIFI" width="100" height="100"/>
-        <image name="facebook" width="128" height="128"/>
+        <image name="coffee-grain" width="32" height="32"/>
+        <image name="coffeeFavorites" width="32" height="32"/>
+        <image name="facebook2" width="128" height="128"/>
+        <image name="facebook3" width="32" height="32"/>
+        <image name="favourite" width="32" height="32"/>
         <image name="heart" width="128" height="128"/>
-        <image name="location" width="128" height="128"/>
         <image name="luanch" width="128" height="128"/>
+        <image name="search" width="30" height="32"/>
     </resources>
 </document>

@@ -50,6 +50,8 @@ class ProductViewController: UIViewController {
         if let imageURL = NSURL(string: image){
             if let data = NSData(contentsOfURL: imageURL) {
                 self.productImage.image = UIImage(data:data)
+                self.productImage.layer.cornerRadius = 5
+                self.productImage.layer.masksToBounds = true
             }
         }
     }

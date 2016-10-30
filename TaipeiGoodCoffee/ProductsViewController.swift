@@ -57,6 +57,8 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         if let imageURL = NSURL(string: getStoreImage ){
             if let data = NSData(contentsOfURL: imageURL) {
                 self.storeImage.image = UIImage(data:data)
+                self.storeImage.layer.cornerRadius = 5
+                self.storeImage.layer.masksToBounds = true
                 }
             }
     
@@ -152,6 +154,8 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         if let imageURL = NSURL(string: showProductArray[indexPath.row].productImage){
             if let data = NSData(contentsOfURL: imageURL) {
                 cell.productsImageForCell.image = UIImage(data:data)
+                cell.productsImageForCell.layer.cornerRadius = 5
+                cell.productsImageForCell.layer.masksToBounds = true
             }
         }
 
