@@ -61,12 +61,7 @@ class FirebaseData {
                                 
                                 //判斷重複
                                 for store in self.stores {
-                                    print("storeID \(store.storeID)")
                                     if store.storeID == getStore.storeID {
-                                        print("getStore \(getStore.storeID)")
-                                        //print(getStore.storeID)
-                                        
-                                        
                                         haveSameStore = true
                                     }
                                 }
@@ -100,7 +95,7 @@ class FirebaseData {
                 n += 1
                 
                 conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(selectProductFlavorID)").observeEventType(.ChildAdded, withBlock:{ snapshot in
-                    print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+                    //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
                     
                     if let getProductFlavor = snapshot.value as? NSDictionary {
                         let getProduct = Products(data: getProductFlavor)

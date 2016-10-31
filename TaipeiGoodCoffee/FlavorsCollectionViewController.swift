@@ -25,12 +25,21 @@ class FlavorsCollectionViewController: UICollectionViewController {
     
     //Navigation right button
     @IBAction func reSaveFlavors(sender: AnyObject) {
+        
         self.saveFlavor(sender)
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.navigationController?.navigationBar.barTintColor=UIColor.redColor();
+
+
+        
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 125/255, green: 205/255, blue: 206/255, alpha: 1.0)
+        
+        
         
         //設定collectionView的上下左右間距
         self.collectionView!.contentInset = UIEdgeInsetsMake(20,0,10,0)
@@ -200,6 +209,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
         let cell : UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
         var info = flavorData[indexPath.row]
         if info.isSelect {
+            
             
             //淺藍色
             cell.backgroundColor = UIColor(red: 237/255, green: 1, blue: 1, alpha: 1)

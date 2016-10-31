@@ -23,6 +23,10 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "找咖啡"
+        UINavigationBar.appearance().barTintColor = UIColor(red: 125/255, green: 205/255, blue: 206/255, alpha: 1.0)
+        
+        
         
         //delegate FirebaseData
         FirebaseData.shared.delegate = self
@@ -39,6 +43,8 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         view.addSubview(spinner)
         spinner.startAnimating()
         
+        
+        
         //refresh control
         refreshControl = UIRefreshControl()
         self.view.addSubview(refreshControl!)
@@ -47,14 +53,20 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
     
     func getStoreData(manager: FirebaseData, didGetStoreData: [Stores]) {
         stores = didGetStoreData
-        self.tableView.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
         
         //stop spinner
         self.spinner.stopAnimating()
     }
     
     func getProductData(manager: FirebaseData, didGetProductsData: [Products]) {
-        products = didGetProductsData
+        
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), {
+            self.products = didGetProductsData
+        })
     }
     
     
@@ -64,6 +76,10 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //
+     func layoutSubviews() {
+        tableView.frame = UIEdgeInsetsInsetRect(tableView.frame, UIEdgeInsetsMake(0, 0, 0, 0))
+    }
     
     // MARK: - Table view data source
     
@@ -77,11 +93,22 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         return stores.count
     }
     
-    
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("storeCell", forIndexPath: indexPath) as! StoreTableViewCell
         
+        //取消預設分隔線
+        tableView.separatorStyle = .None
+        cell.layer.borderWidth = 0
+        cell.clipsToBounds = true
+        
+        
+        
+        //cell radius
+        cell.layer.cornerRadius = 10
+        //cell.layer.borderColor = UIColor.grayColor().CGColor
+        
+        
+        //設定值
         cell.storeNameCell.text = stores[indexPath.row].storeName
         cell.storeAdd.text = stores[indexPath.row].storeAddress
         cell.storePhone.text = stores[indexPath.row].storePhone
@@ -89,7 +116,12 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         //處理網路上拿下來的圖片方式，要先轉型成URL，再轉成NSData
         if let imageURL = NSURL(string: stores[indexPath.row].storeImage){
             if let data = NSData(contentsOfURL: imageURL) {
+                
                 cell.storeImageCell.image = UIImage(data:data)
+                
+                cell.storeImageCell.layer.cornerRadius = 5
+                cell.storeImageCell.layer.masksToBounds = true
+                
             }
         }
         
@@ -149,7 +181,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 }
                 
                 indexPaxh.row
-                //FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
+                
                 
                 productList.getStoreName = stores[indexPaxh.row].storeName
                 productList.facebookFanPage = stores[indexPaxh.row].fbPage
@@ -164,6 +196,10 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 //傳整包Store及product
                 productList.getProductArray = self.products
                 productList.getStoreArray = self.stores
+                
+                //GA
+                FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
+                
                 
                 
                 

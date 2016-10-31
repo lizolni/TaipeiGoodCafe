@@ -10,8 +10,7 @@
         import Firebase
         import FBSDKLoginKit
         import FBSDKCoreKit
-        //import <Google/Analytics.h>
-        
+
         @UIApplicationMain
         class AppDelegate: UIResponder, UIApplicationDelegate {
             
@@ -19,6 +18,8 @@
             
             func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
                 // Override point for customization after application launch.
+                
+                UINavigationBar.appearance().barTintColor = UIColor(red: 112/255, green: 247/255, blue: 247/255, alpha: 1.0)
                 
                 FIRApp.configure()
                 
