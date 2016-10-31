@@ -213,6 +213,8 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         if let imageURL = NSURL(string: getProdImage){
             if let data = NSData(contentsOfURL: imageURL) {
                 self.prodImage.image = UIImage(data:data)
+                self.prodImage.layer.cornerRadius = 5
+                self.prodImage.layer.masksToBounds = true
             }
         }
         

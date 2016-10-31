@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import FBSDKShareKit
 
 class ProductViewController: UIViewController {
     
@@ -22,8 +23,11 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     
+
+
+
     var image : String!
-    
+
     var name : String = ""
     var producer : String = ""
     var manor : String = ""
@@ -37,6 +41,9 @@ class ProductViewController: UIViewController {
     var NSuser = NSUserDefaults.standardUserDefaults()
     
     
+ 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         productName.text = name
@@ -45,8 +52,9 @@ class ProductViewController: UIViewController {
         productWeight.text = weight
         productDescription.text = flavorDescription
         productPrice.text = ("$\(price)")
-        
+          
         //圖片要先轉型成URL，再轉成NSData
+        
         if let imageURL = NSURL(string: image){
             if let data = NSData(contentsOfURL: imageURL) {
                 self.productImage.image = UIImage(data:data)
@@ -55,6 +63,47 @@ class ProductViewController: UIViewController {
             }
         }
     }
+    
+    //share
+    @IBAction func shareToFB(sender: UIButton) {
+        
+        
+        let imageToShare : UIImage
+        
+        if let imageURL = NSURL(string: image){
+            if let data = NSData(contentsOfURL: imageURL) {
+                imageToShare = UIImage(data:data)!
+                
+                print(imageToShare)
+                
+                share(shareText: self.name, shareImage: imageToShare)
+                
+            }
+        }
+    }
+    
+    func share(shareText shareText:String?,shareImage:UIImage?){
+        
+        var objectsToShare = [AnyObject]()
+        
+        if let shareTextObj = shareText{
+            objectsToShare.append(shareTextObj)
+        }
+        
+        if let shareImageObj = shareImage{
+            objectsToShare.append(shareImageObj)
+        }
+        
+        if shareText != nil || shareImage != nil{
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            
+            presentViewController(activityViewController, animated: true, completion: nil)
+        }else{
+            print("There is nothing to share")
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
