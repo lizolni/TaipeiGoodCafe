@@ -23,8 +23,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     
-
-
+   
 
     var image : String!
 
@@ -40,12 +39,9 @@ class ProductViewController: UIViewController {
     let conditionRef = FIRDatabase.database().reference()
     var NSuser = NSUserDefaults.standardUserDefaults()
     
-    
- 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         productName.text = name
         productProducer.text = producer
         productManor.text = manor
@@ -64,20 +60,14 @@ class ProductViewController: UIViewController {
         }
     }
     
+
     //share
     @IBAction func shareToFB(sender: UIButton) {
-        
-        
         let imageToShare : UIImage
-        
         if let imageURL = NSURL(string: image){
             if let data = NSData(contentsOfURL: imageURL) {
                 imageToShare = UIImage(data:data)!
-                
-                print(imageToShare)
-                
                 share(shareText: self.name, shareImage: imageToShare)
-                
             }
         }
     }
