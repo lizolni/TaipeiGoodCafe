@@ -23,6 +23,14 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //畫UIButton
+        let button = UIButton(type: .System) // let preferred over var here
+        button.frame = CGRectMake(200, 50, 80, 30)
+        button.backgroundColor = UIColor(red: 150/255, green: 239/255, blue: 241/255, alpha: 1.0)
+        button.setTitle("skip login", forState: UIControlState.Normal)
+        button.addTarget(self, action: "action:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(button)
+        
         
         loginButton.hidden = true
         
@@ -63,10 +71,17 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
                 self.loginButton.hidden = false
                 
-                
-                
+
             }
         }
+    }
+    
+    func action(sender:UIButton!){
+        
+        let storeTableViewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StoreTableView") as! StoreTableViewController
+        storeTableViewVC.switchKey = 1
+        presentViewController(storeTableViewVC, animated: true, completion: nil)
+
     }
     
     

@@ -84,8 +84,6 @@ class FlavorsCollectionViewController: UICollectionViewController {
         // visible/hide reSaveFlavors (@IBaction)
             let saveButton = reSetButtonVisible
             
-            print("reSetButtonVisible status : \(saveButton)")
-            
                 if  saveButton == false {
                     self.navigationItem.rightBarButtonItem?.enabled = false
                     self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clearColor()
@@ -102,8 +100,8 @@ class FlavorsCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func saveFlavor(sender: AnyObject) {
+               
         //submit處理
-        print (clickCount)
         if clickCount < 3 {  //選擇少於3種的處理 //"Please choose 3 flavors"
             let nonSelectAlert = UIAlertController(title: "風味選擇", message:
                 "請選擇三種風味", preferredStyle: UIAlertControllerStyle.Alert)
@@ -150,8 +148,9 @@ class FlavorsCollectionViewController: UICollectionViewController {
     }
         //儲存完NSUserDefault後導頁至store頁
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as! UITableViewController
         self.presentViewController(vc, animated: true, completion: nil)
+
 }
     
     // MARK: UICollectionViewDataSource

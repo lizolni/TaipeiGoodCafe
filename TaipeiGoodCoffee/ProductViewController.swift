@@ -135,6 +135,15 @@ class ProductViewController: UIViewController {
         //GA
         FIRAnalytics.logEventWithName("Product_Favorites", parameters: nil)
         
+        //showAlert 3 Sec
+        let alertController = UIAlertController(title: "", message: "已加入我的最愛", preferredStyle: .Alert)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        let delay = 1.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
         
     }
 

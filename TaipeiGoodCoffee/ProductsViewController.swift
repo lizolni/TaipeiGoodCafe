@@ -106,6 +106,41 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
+    @IBAction func shereStores(sender: UIButton) {
+        let imageToShare : UIImage
+        if let imageURL = NSURL(string: getStoreImage){
+            if let data = NSData(contentsOfURL: imageURL) {
+                imageToShare = UIImage(data:data)!
+                share(shareText: self.title, shareImage: imageToShare)
+            }
+        }
+
+        
+        
+    }
+    
+    func share(shareText shareText:String?,shareImage:UIImage?){
+        
+        var objectsToShare = [AnyObject]()
+        
+        if let shareTextObj = shareText{
+            objectsToShare.append(shareTextObj)
+        }
+        
+        if let shareImageObj = shareImage{
+            objectsToShare.append(shareImageObj)
+        }
+        
+        if shareText != nil || shareImage != nil{
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            
+            presentViewController(activityViewController, animated: true, completion: nil)
+        }else{
+            print("There is nothing to share")
+        }
+    }
+
     
     //點擊我的最愛by店家
     @IBAction func store_Favorites(sender: AnyObject) {
@@ -126,10 +161,15 @@ class ProductsViewController: UIViewController, UICollectionViewDataSource, UICo
         //GA
         FIRAnalytics.logEventWithName("Store_Faorites", parameters: nil)
         
-        //query firebase
-//        conditionRef.child("Coffee/favorites").child(storeID as! String).queryOrderedByChild(user as! String).queryEqualToValue(true).observeEventType(.value, withBlock:{ snapshot in
-//            print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
-//        })
+        //showAlert 3 Sec
+        let alertController = UIAlertController(title: "", message: "已加入我的最愛", preferredStyle: .Alert)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        let delay = 1.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
     }
 
 

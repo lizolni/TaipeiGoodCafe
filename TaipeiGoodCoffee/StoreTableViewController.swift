@@ -17,6 +17,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
     let conditionRef = FIRDatabase.database().reference()
     var stores = [Stores]()
     var products = [Products]()
+    var switchKey:Int = 0
     
     
     
@@ -26,25 +27,34 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         self.navigationItem.title = "找咖啡"
         UINavigationBar.appearance().barTintColor = UIColor(red: 125/255, green: 205/255, blue: 206/255, alpha: 1.0)
         
-        
-        
         //delegate FirebaseData
         FirebaseData.shared.delegate = self
         
-        //call Firebase fetchStore func
-        FirebaseData.shared.fetchStore()
+        let getDataSwitch = switchKey
         
-        //call Firebase fetchPrducts func
-        FirebaseData.shared.fetchProducts()
+//        if getDataSwitch == 1 {
+//        
+//            //call Firebase fetchAllStore
+//            FirebaseData.shared.fetchAllStore()
+//            
+//            //call Firebase fetchAllProducts function
+//            FirebaseData.shared.fetchAllProducts()
+//            
+//        }else{
+        
+            //call Firebase fetchStore function
+            FirebaseData.shared.fetchStore()
+            
+            //call Firebase fetchPrducts function
+            FirebaseData.shared.fetchProducts()
+//            }
         
         //spinner
         spinner.hidesWhenStopped = true
         spinner.center = view.center
         view.addSubview(spinner)
         spinner.startAnimating()
-        
-        
-        
+                
         //refresh control
         refreshControl = UIRefreshControl()
         self.view.addSubview(refreshControl!)
@@ -57,7 +67,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
         })
-        
+    
         //stop spinner
         self.spinner.stopAnimating()
     }
@@ -69,7 +79,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         })
     }
     
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,8 +110,6 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         tableView.separatorStyle = .None
         cell.layer.borderWidth = 0
         cell.clipsToBounds = true
-        
-        
         
         //cell radius
         cell.layer.cornerRadius = 10
@@ -162,7 +170,6 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
     //下拉更新
     func refresh(sender:AnyObject)
     {
-        //self.getStoredData() //重取資料
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
@@ -199,8 +206,6 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 
                 //GA
                 FIRAnalytics.logEventWithName("\(stores[indexPaxh.row].storeName)", parameters: nil)
-                
-                
                 
                 
             }
