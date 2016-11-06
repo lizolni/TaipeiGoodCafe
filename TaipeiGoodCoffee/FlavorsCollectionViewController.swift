@@ -148,7 +148,7 @@ class FlavorsCollectionViewController: UICollectionViewController {
     }
         //儲存完NSUserDefault後導頁至store頁
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as! UITableViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TarBarController") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
 
 }

@@ -183,6 +183,8 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: ("dismissKeyboard")))
+        
         //UIPickerView
         picker.delegate = self
         picker.dataSource = self
@@ -220,6 +222,19 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         
         //更新頁面之商品價格、運費、結帳金額
         countTotalPrice()
+    }
+    
+    func dismissKeyboard(){
+        cardYear.resignFirstResponder()
+        cardMonth.resignFirstResponder()
+        cardNumber.resignFirstResponder()
+        cvc.resignFirstResponder()
+        buyerName.resignFirstResponder()
+        buyerPhone.resignFirstResponder()
+        buyerAddress.resignFirstResponder()
+        receiverName.resignFirstResponder()
+        receiverPhone.resignFirstResponder()
+        receiverAddress.resignFirstResponder()
     }
     
     //validated textfield
@@ -294,6 +309,8 @@ class CartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewData
         
         return true
     }
+    
+
     
     //PickerView Delegate & DataSource
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
