@@ -48,6 +48,7 @@
 # Libraries
   * MapKit
   * FBSDK
+  * Firebase
   * Tracking Tool
     * Google Analytics
     * Crashlytics
