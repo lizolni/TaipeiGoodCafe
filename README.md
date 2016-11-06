@@ -25,7 +25,7 @@
   	* Wifi Info
 
   * Cafe Bean Information
-  	* Cafe Name
+  	* Name
   	* Country
   	* Regin
   	* Weight
