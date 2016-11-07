@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch2" translatesAutoresizingMaskIntoConstraints="NO" id="uk7-kH-hY9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch2" translatesAutoresizingMaskIntoConstraints="NO" id="uk7-kH-hY9">
                                 <rect key="frame" x="210" y="210" width="180" height="180"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk1-ZF-mjQ">
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.58823529411764708" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.4392156862745098" green="0.96862745098039216" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uk7-kH-hY9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uee-Uc-bTs"/>
                             <constraint firstItem="Sk1-ZF-mjQ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="130" id="a2I-rW-XZZ"/>

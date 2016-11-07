@@ -25,29 +25,30 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         super.viewDidLoad()
         
         self.navigationItem.title = "找咖啡"
-        UINavigationBar.appearance().barTintColor = UIColor(red: 125/255, green: 205/255, blue: 206/255, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 112/255, green: 247/255, blue: 247/255, alpha: 1.0)
         
+    
         //delegate FirebaseData
         FirebaseData.shared.delegate = self
         
         let getDataSwitch = switchKey
         
-//        if getDataSwitch == 1 {
-//        
-//            //call Firebase fetchAllStore
-//            FirebaseData.shared.fetchAllStore()
-//            
-//            //call Firebase fetchAllProducts function
-//            FirebaseData.shared.fetchAllProducts()
-//            
-//        }else{
-        
+        if getDataSwitch == 1 {
+            
+            //call Firebase fetchAllStore
+            FirebaseData.shared.fetchAllStore()
+            
+            //call Firebase fetchAllProducts function
+            FirebaseData.shared.fetchAllProducts()
+            
+        }else{
+            
             //call Firebase fetchStore function
             FirebaseData.shared.fetchStore()
             
             //call Firebase fetchPrducts function
             FirebaseData.shared.fetchProducts()
-//            }
+        }
         
         //spinner
         spinner.hidesWhenStopped = true
@@ -65,7 +66,7 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
         stores = didGetStoreData
         
         dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
+           self.tableView.reloadData()
         })
     
         //stop spinner
@@ -209,8 +210,6 @@ class StoreTableViewController: UITableViewController,GetFirebaseDataDelegate {
                 
                 
             }
-            
         }
     }
-    
-}
+ }

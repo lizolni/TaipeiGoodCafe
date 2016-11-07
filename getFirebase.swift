@@ -111,77 +111,74 @@ class FirebaseData {
     func fetchAllStore() {
         
         self.stores.removeAll()
-        //抓取NSUserDefault 1-12 的值
-        var fid = 1
+        //抓取NSUserDefault 1-3 的值
+        var n = 1
         for select in 1...12 {
-            
-            conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(fid)").observeEventType(.Value, withBlock:{ snapshot in
-                print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
-                
-                for child in snapshot.children {
-                    let storeID_1 = child.value["storeID"]
-                    guard let id_1 = storeID_1 as? String else {
-                        print(" not match flavorID equal to storeID")
-                        break
-                    }
-
-                    //依照productID取得Store資料
-                    self.conditionRef.child("coffee/Stores").queryOrderedByChild("storeID").queryEqualToValue(id_1).observeEventType(.ChildAdded, withBlock:{ snapshot in
-                        print ("stores ALL KEY\(snapshot.key) . Store All Value\(snapshot.value)")
-
-                        if let getFlavor = snapshot.value as? NSDictionary {
-                            let getStore = Stores(data: getFlavor)
-
-                            //判斷重複store的開關
-                            var haveSameStore = false
-                            
-                            //判斷重複
-                            for store in self.stores {
-                                if store.storeID == getStore.storeID {
-                                    haveSameStore = true
-                                }
-                            }
-                            //重複為false的時候才把store加到stores array
-                            if !haveSameStore {
-                                self.stores.append(getStore)
-                            }else{
-                                print("add to array fails")
-                            }
-                            
-                        }else {
-                            print("Please check your Network")
+           
+            conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(n)").observeEventType(.Value, withBlock:{ snapshot in
+                    //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+                    
+                    for child in snapshot.children {
+                        
+                        let storeID_1 = child.value["storeID"]
+                        guard let id_1 = storeID_1 as? String else{
+                            fatalError()
                         }
-                        //執行Delegate，若正確，回傳給StoreTableViewController
-                        self.delegate?.getStoreData(self,didGetStoreData : self.stores)
-                    })
-                }
-            })
-            fid += 1
-        }
+                        //依照productID取得Store資料
+                        self.conditionRef.child("coffee/Stores").queryOrderedByChild("storeID").queryEqualToValue(id_1).observeEventType(.ChildAdded, withBlock:{ snapshot in
+                            //print ("stores KEY\(snapshot.key) . Store Value\(snapshot.value)")
+                            
+                            if let getFlavor = snapshot.value as? NSDictionary {
+                                let getStore = Stores(data: getFlavor)
+                                
+                                //判斷重複store的開關
+                                var haveSameStore = false
+                                
+                                //判斷重複
+                                for store in self.stores {
+                                    if store.storeID == getStore.storeID {
+                                        haveSameStore = true
+                                    }
+                                }
+                                //重複為false的時候才把store加到stores array
+                                if !haveSameStore {
+                                    self.stores.append(getStore)
+                                }else{
+                                    print("add to array fails")
+                                }
+                                
+                            }else{
+                                print("Please check your Network")
+                            }
+                            //執行Delegate，若正確，回傳給StoreTableViewController
+                            self.delegate?.getStoreData(self,didGetStoreData : self.stores)
+                        })
+                    }
+                })
+            n += 1
+            }
     }
 
     
     
     func fetchAllProducts() {
-        
-        self.products.removeAll()
-        //抓取NSUserDefault 1-12 的值
-        var fid = 1
-        for select in 1...12 {
-            
-                conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(fid)").observeEventType(.ChildAdded, withBlock:{ snapshot in
-                    
-                    print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
-                    
-                    if let getProductFlavor = snapshot.value as? NSDictionary {
-                        let getProduct = Products(data: getProductFlavor)
-                        self.products.append(getProduct)
-                    }else {
-                        print("getProductData fails")
-                    }
-                    self.delegate?.getProductData(self, didGetProductsData: self.products)
-                })
-            fid += 1
+            self.products.removeAll()
+            //抓取NSUserDefault 1-12 的值
+            var n = 1
+            for select in 1...12 {
+                
+                    self.conditionRef.child("coffee/Products").queryOrderedByChild("flavorID").queryEqualToValue("\(n)").observeEventType(.ChildAdded, withBlock:{ snapshot in
+                        //print ("procuts KEY: \(snapshot.key) . products value: \(snapshot.value)")
+                        
+                        if let getProductFlavor = snapshot.value as? NSDictionary {
+                            let getProduct = Products(data: getProductFlavor)
+                            self.products.append(getProduct)
+                        }else {
+                            print("getProductData fails")
+                        }
+                        self.delegate?.getProductData(self, didGetProductsData: self.products)
+                    })
+                n += 1
+                }
             }
-        }
 }

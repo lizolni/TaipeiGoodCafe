@@ -23,7 +23,7 @@
                                 <color key="color" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.58823529409999997" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.4392156862745098" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vp2-fv-5Kb" firstAttribute="centerY" secondItem="XNp-KH-qyU" secondAttribute="centerY" id="6Yw-Xp-Mo0"/>
                             <constraint firstItem="vp2-fv-5Kb" firstAttribute="centerX" secondItem="XNp-KH-qyU" secondAttribute="centerX" id="RcX-JI-czW"/>
@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="3369" y="1280"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tar Bar View Controller-->
         <scene sceneID="zzQ-Kk-bTn">
             <objects>
-                <tabBarController storyboardIdentifier="TarBarController" id="RI7-3f-YTy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TarBarController" id="RI7-3f-YTy" customClass="TarBarViewController" customModule="TaipeiGoodCoffee" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TPN-3y-CrK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1687,10 +1687,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-zJ-WS5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-zJ-WS5">
                                 <rect key="frame" x="240" y="377" width="120" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="lnG-xB-zWf"/>
                                     <constraint firstAttribute="height" constant="36" id="z44-fu-HEb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>

@@ -26,7 +26,7 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         //畫UIButton
         let button = UIButton(type: .System) // let preferred over var here
         button.frame = CGRectMake(200, 50, 80, 30)
-        button.backgroundColor = UIColor(red: 150/255, green: 239/255, blue: 241/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red:   112/255, green: 247/255, blue: 247/255, alpha: 1.0)
         button.setTitle("skip login", forState: UIControlState.Normal)
         button.addTarget(self, action: "action:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
@@ -78,9 +78,9 @@ class FBLoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     
     func action(sender:UIButton!){
         
-        let storeTableViewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StoreTableView") as! StoreTableViewController
-        storeTableViewVC.switchKey = 1
-        presentViewController(storeTableViewVC, animated: true, completion: nil)
+        let tarbarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TarBarController") as! TarBarViewController
+        tarbarVC.switchKey = 1
+        presentViewController(tarbarVC, animated: true, completion: nil)
 
     }
     

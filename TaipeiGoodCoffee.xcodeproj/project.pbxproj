@@ -36,6 +36,7 @@
 		9FB36E5A1DB8ED6300E2BAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB36E581DB8ED6300E2BAC1 /* Main.storyboard */; };
 		9FB36E5C1DB9E60300E2BAC1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9FB36E5B1DB9E60300E2BAC1 /* .gitignore */; };
 		9FC7D4EC1DC5CA59000473E2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7D4EB1DC5CA59000473E2 /* SearchViewController.swift */; };
+		9FD447501DCF861900CA3E6B /* TarBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4474F1DCF861900CA3E6B /* TarBarViewController.swift */; };
 		9FE0628F1DA1104A0020E0E4 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */; };
 		9FE062911DA1130A0020E0E4 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */; };
 		9FE062951DA2269A0020E0E4 /* getFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE062941DA2269A0020E0E4 /* getFirebase.swift */; };
@@ -76,6 +77,7 @@
 		9FB36E591DB8ED6300E2BAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB36E5B1DB9E60300E2BAC1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9FC7D4EB1DC5CA59000473E2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9FD4474F1DCF861900CA3E6B /* TarBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarBarViewController.swift; sourceTree = "<group>"; };
 		9FE0628E1DA1104A0020E0E4 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		9FE062901DA1130A0020E0E4 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		9FE062941DA2269A0020E0E4 /* getFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = getFirebase.swift; path = ../getFirebase.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		9F979A431D9D1CA700AAA250 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9FD4474F1DCF861900CA3E6B /* TarBarViewController.swift */,
 				9F17CEDF1DB4EF710097407D /* ATMViewController.swift */,
 				9F17CEDD1DB4EEFC0097407D /* CreditCardViewController.swift */,
 				9F17CE911DB3C2DA0097407D /* CartViewController.swift */,
@@ -324,6 +327,7 @@
 				9F979A3E1D9D10A500AAA250 /* FlavorsCollectionViewController.swift in Sources */,
 				9F8580311DA48EF900211B6F /* products.swift in Sources */,
 				9FC7D4EC1DC5CA59000473E2 /* SearchViewController.swift in Sources */,
+				9FD447501DCF861900CA3E6B /* TarBarViewController.swift in Sources */,
 				9F8580351DA53E8200211B6F /* post.swift in Sources */,
 				9F17CEDE1DB4EEFC0097407D /* CreditCardViewController.swift in Sources */,
 				9F8580371DA572CC00211B6F /* store.swift in Sources */,
